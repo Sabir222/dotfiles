@@ -19,7 +19,7 @@ def remove_git_dir(directory):
     git_dir = os.path.join(directory, ".git")
     if os.path.exists(git_dir):
         shutil.rmtree(git_dir)
-        print(f"Removed .git directory from {directory}")
+        print(f"Removed .git directory from {directory}")  # Added print statement
 
 def main():
     # Define the files and directories to check for
