@@ -15,6 +15,12 @@ def add_to_git(target_path):
     subprocess.run(["git", "-C", target_path, "commit", "-m", "update: update dotfiles"])
     subprocess.run(["git", "-C", target_path, "push"])
 
+def remove_git_dir(directory):
+    git_dir = os.path.join(directory, ".git")
+    if os.path.exists(git_dir):
+        shutil.rmtree(git_dir)
+        print(f"Removed .git directory from {directory}")
+
 def main():
     # Define the files and directories to check for
     files_and_directories = {
@@ -41,6 +47,9 @@ def main():
         else:
             print(f"File or directory '{source}' does not exist.")
 
+        if "nvim" in target:
+            remove_git_dir(target)
+        
         add_to_git(os.path.dirname(target))
 
 if __name__ == "__main__":
