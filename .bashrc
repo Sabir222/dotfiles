@@ -3,6 +3,7 @@ case $- in
   *i*) ;;
     *) return;;
 esac
+
 # Path to your oh-my-bash installation.
 export OSH='/home/sabir/.oh-my-bash'
 
