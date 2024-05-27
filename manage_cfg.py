@@ -10,20 +10,11 @@ def copy_to_dotfiles(source_path, target_path):
             os.remove(target_path)  # Remove existing file
     shutil.copytree(source_path, target_path)  # Copy entire directory recursively
 
-def add_to_git(target_path):
-    subprocess.run(["git", "-C", target_path, "add", "."])
-    subprocess.run(["git", "-C", target_path, "commit", "-m", "update: update dotfiles"])
-    subprocess.run(["git", "-C", target_path, "push"])
-
 def remove_git_dir(directory):
     git_dir = os.path.join(directory, ".git")
-    github_dir = os.path.join(directory, ".github")
     if os.path.exists(git_dir):
         shutil.rmtree(git_dir)
         print(f"Removed .git directory from {directory}")
-    if os.path.exists(github_dir):
-        shutil.rmtree(github_dir)
-        print(f"Removed .github directory from {directory}")
 
 def main():
     # Define the files and directories to check for
@@ -45,21 +36,25 @@ def main():
             if os.path.isdir(source):
                 copy_to_dotfiles(source, target)
                 print(f"Copied directory '{source}' to '{target}'")
+                if "nvim" in target:  # Check if the target is the Neovim configuration directory
+                    remove_git_dir(target)  # Remove .git directory from the copied Neovim configuration
             else:
                 shutil.copy(source, target)
                 print(f"Copied file '{source}' to '{target}'")
         else:
             print(f"File or directory '{source}' does not exist.")
-
-        if "nvim" in target:
-            remove_git_dir(target)
-        
-        add_to_git(os.path.dirname(target))
+    
+    # Add, commit, and push changes to GitHub
+    dotfiles_dir = os.path.expanduser("~/dotfiles")
+    subprocess.run(["git", "-C", dotfiles_dir, "add", "."])
+    subprocess.run(["git", "-C", dotfiles_dir, "commit", "-m", "Update dotfiles"])
+    subprocess.run(["git", "-C", dotfiles_dir, "push"])
 
 if __name__ == "__main__":
     main()
 # import os
 # import shutil
+# import subprocess
 #
 # def copy_to_dotfiles(source_path, target_path):
 #     if os.path.exists(target_path):
@@ -68,6 +63,21 @@ if __name__ == "__main__":
 #         else:
 #             os.remove(target_path)  # Remove existing file
 #     shutil.copytree(source_path, target_path)  # Copy entire directory recursively
+#
+# def add_to_git(target_path):
+#     subprocess.run(["git", "-C", target_path, "add", "."])
+#     subprocess.run(["git", "-C", target_path, "commit", "-m", "update: update dotfiles"])
+#     subprocess.run(["git", "-C", target_path, "push"])
+#
+# def remove_git_dir(directory):
+#     git_dir = os.path.join(directory, ".git")
+#     github_dir = os.path.join(directory, ".github")
+#     if os.path.exists(git_dir):
+#         shutil.rmtree(git_dir)
+#         print(f"Removed .git directory from {directory}")
+#     if os.path.exists(github_dir):
+#         shutil.rmtree(github_dir)
+#         print(f"Removed .github directory from {directory}")
 #
 # def main():
 #     # Define the files and directories to check for
@@ -94,6 +104,11 @@ if __name__ == "__main__":
 #                 print(f"Copied file '{source}' to '{target}'")
 #         else:
 #             print(f"File or directory '{source}' does not exist.")
+#
+#         if "nvim" in target:
+#             remove_git_dir(target)
+#         
+#         add_to_git(os.path.dirname(target))
 #
 # if __name__ == "__main__":
 #     main()
