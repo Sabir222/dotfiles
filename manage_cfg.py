@@ -17,9 +17,13 @@ def add_to_git(target_path):
 
 def remove_git_dir(directory):
     git_dir = os.path.join(directory, ".git")
+    github_dir = os.path.join(directory, ".github")
     if os.path.exists(git_dir):
         shutil.rmtree(git_dir)
-        print(f"Removed .git directory from {directory}")  # Added print statement
+        print(f"Removed .git directory from {directory}")
+    if os.path.exists(github_dir):
+        shutil.rmtree(github_dir)
+        print(f"Removed .github directory from {directory}")
 
 def main():
     # Define the files and directories to check for
