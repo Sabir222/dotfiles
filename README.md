@@ -1,4 +1,6 @@
-# add ~/.tmux.conf file and then run in terminal " tmux source ~/.tmux.conf"
+## Must do!
+
+- add ~/.tmux.conf file and then run in terminal " tmux source ~/.tmux.conf"
 
 ```bash
 - git clone tmux-tmp
