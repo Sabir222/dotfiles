@@ -5,8 +5,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 # autosuggestion color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
-# accepting auto suggestions with tab
-bindkey '\t' end-of-line
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -101,10 +99,11 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
  alias vim="nvim"
+ alias tvim="tmux new-session -d -s vim && tmux send-keys -t vim 'nvim' Enter && tmux attach -t vim"
  alias vimconf="cd ~/.config/nvim/ && nvim ."
  alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH=$PATH:/home/sabir/nodejs/bin
 export PATH=$PATH:/home/sabir/GoLand-2024.1.2/bin
 export PATH=$PATH:/usr/local/go/bin
-# startship
+export PATH=$HOME/.local/bin:$PATH
