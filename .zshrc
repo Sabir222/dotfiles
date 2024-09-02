@@ -107,3 +107,4 @@ export PATH=$PATH:/home/sabir/nodejs/bin
 export PATH=$PATH:/home/sabir/GoLand-2024.1.2/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$PATH:$HOME/go/bin
