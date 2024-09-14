@@ -13,6 +13,7 @@ return {
       require('oil').setup {
         columns = { 'icon' },
         keymaps = {
+          ['<C-s>'] = false,
           ['<C-h>'] = false,
           ['<C-l>'] = false,
           ['<C-k>'] = false,

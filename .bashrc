@@ -147,3 +147,4 @@ export PATH=$PATH:/usr/local/go/bin
 alias vimconf='cd ~/.config/nvim/ && nvim ~/.config/nvim/' 
 alias vim='nvim'
 alias bashconf="nvim ~/.bashrc"
+. "$HOME/.cargo/env"
