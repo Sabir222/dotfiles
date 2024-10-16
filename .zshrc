@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+ alias cheat="curl cht.sh"
  alias vi="/usr/bin/vim"
  alias vim="nvim"
  alias tvim="tmux new-session -d -s vim && tmux send-keys -t vim 'nvim' Enter && tmux attach -t vim"

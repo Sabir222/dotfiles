@@ -1,0 +1,47 @@
+{
+  // vim settings
+  "vim.leader": "<Space>",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "space"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["leader", "f"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    },
+    {
+      "before": ["leader", "w"],
+      "commands": ["workbench.action.files.save"]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  // other settings
+  "editor.formatOnSave": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "window.menuBarVisibility": "toggle",
+  "window.density.editorTabHeight": "compact",
+  "cmake.showOptionsMovedNotification": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.lineNumbers": "relative",
+  "workbench.panel.defaultLocation": "right",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right"
+}
