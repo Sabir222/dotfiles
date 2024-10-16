@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # autosuggestion color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 # Bind Ctrl+L to accept autosuggestions
-bindkey '^L' autosuggest-accept
+bindkey '^p' autosuggest-accept
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -114,11 +114,6 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/DataGrip-2024.2.2/bin
 . "$HOME/.cargo/env"
-# Add this to your ~/.zshrc
-# function fjf() {
-#     local dir
-#     dir=$(find ~/Desktop -mindepth 1 -maxdepth 1 -type d | fzf) && cd "$dir"
-# }
 function fjf() {
     local dir
     dir=$(find ~/Desktop -mindepth 1 -maxdepth 1 -type d | fzf) && cd "$dir" && tmux new-session -c "$dir"
