@@ -50,5 +50,6 @@
     "markdown": false,
     "scminput": false
   },
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "window.restoreWindows": "none"
 }
