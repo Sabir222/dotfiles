@@ -1,9 +1,8 @@
 return {
-  {
-    'luisiacc/gruvbox-baby',
-    branch = 'main',
-    config = function()
-      vim.g.gruvbox_baby_background_color = 'dark'
-    end,
-  },
+
+  -- { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true, opts = {
+  --   terminal_colors = true,
+  --   contrast = 'hard',
+  --   transparent_mode = true,
+  -- } },
 }
