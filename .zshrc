@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
  alias cheat="curl cht.sh"
+ alias dotfiles="cd ~/dotfiles/"
  alias vi="/usr/bin/vim"
  alias vim="nvim"
  alias tvim="tmux new-session -d -s vim && tmux send-keys -t vim 'nvim' Enter && tmux attach -t vim"
