@@ -83,6 +83,10 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- Define your preferred themes
+--local themes = { 'sonokai', 'solarized-osaka' } -- Replace with your actual theme names
+--local selected_theme = themes[math.random(#themes)]
+--vim.cmd('colorscheme ' .. selected_theme)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -838,7 +842,8 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      --vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'solarized-osaka'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
