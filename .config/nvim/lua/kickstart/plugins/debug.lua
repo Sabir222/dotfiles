@@ -24,6 +24,7 @@ return {
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
   },
+  lazy = true,
   keys = function(_, keys)
     local dap = require 'dap'
     local dapui = require 'dapui'
