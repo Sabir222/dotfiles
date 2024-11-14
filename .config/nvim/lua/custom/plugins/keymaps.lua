@@ -11,4 +11,6 @@ return {
   vim.keymap.set({ 'n', 'v' }, '<leader>cd', ':CopilotChatDocs<CR>', {}),
   vim.keymap.set({ 'n', 'v' }, '<leader>ct', ':CopilotChatTests<CR>', {}),
   vim.keymap.set({ 'n', 'v', 'i' }, '<C-z>', '<Esc>:CopilotChatToggle<CR>', {}),
+  -- Remap Tab to go to Normal mode in Insert mode
+  vim.api.nvim_set_keymap('i', '<Tab>', '<Esc>', { noremap = true, silent = true }),
 }
