@@ -1,0 +1,9 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "7967abe55752aa90532e6bb4bd4663fe27a264cb" },
+  "nvim-web-devicons": { "branch": "master", "commit": "19d257cf889f79f4022163c3fbb5e08639077bd8" },
+  "oil.nvim": { "branch": "master", "commit": "8ea40b5506115b6d355e304dd9ee5089f7d78601" },
+  "onedark.nvim": { "branch": "master", "commit": "67a74c275d1116d575ab25485d1bfa6b2a9c38a6" },
+  "plenary": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
+  "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
+  "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" }
+}
