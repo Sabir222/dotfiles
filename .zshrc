@@ -143,9 +143,3 @@ export PATH=$PATH:$HOME/DataGrip-2024.2.2/bin
 export PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer\n"
 . "$HOME/.cargo/env"
-function fjf() {
-    local dir
-    dir=$(find ~/Desktop -mindepth 1 -maxdepth 1 -type d | fzf) && cd "$dir" && tmux new-session -c "$dir"
-}
-
-alias work="tmux new-session -c \"\$(find ~/Desktop -type d -name '.git' -exec dirname {} \; | sort -u | fzf)\""
