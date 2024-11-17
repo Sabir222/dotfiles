@@ -140,6 +140,8 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/DataGrip-2024.2.2/bin
+export PATH="$PATH":"$HOME/.local/scripts/"
+bindkey -s ^f "tmux-sessionizer\n"
 . "$HOME/.cargo/env"
 function fjf() {
     local dir
