@@ -11,3 +11,8 @@
 ```
 
 - C-a + I to install the tmp plugins
+
+
+## give permission to tmux sessionizer 
+
+chmod +x ~/.local/scripts/tmux-sessionizer
