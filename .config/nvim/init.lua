@@ -83,10 +83,10 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
--- Define your preferred themes
---local themes = { 'sonokai', 'solarized-osaka' } -- Replace with your actual theme names
---local selected_theme = themes[math.random(#themes)]
---vim.cmd('colorscheme ' .. selected_theme)
+-- Define the list of themes
+--local themes = { 'solarized-osaka', 'gruvbox', 'tokyonight', 'onedark', 'rose-pine', 'moonfly' } -- Add your themes here
+--TODO: make the a keymap to switch betwwen favorite themes
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
