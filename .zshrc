@@ -12,7 +12,7 @@ bindkey '^p' autosuggest-accept
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-# Set list of themes to pick from when loading at random
+## Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions z sudo web-search)
+plugins=(eza zsh-syntax-highlighting zsh-autosuggestions z sudo web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,8 +129,8 @@ source $ZSH/oh-my-zsh.sh
  alias vi='NVIM_APPNAME=nvim-alt nvim'
  alias dotfiles="cd ~/dotfiles/"
  #alias vi="/usr/bin/vim"
+ alias ls='eza --long --icons=always --no-filesize --no-time --no-user'
  alias vim='NVIM_APPNAME=nvim nvim'
- alias tvim="tmux new-session -d -s vim && tmux send-keys -t vim 'nvim' Enter && tmux attach -t vim"
  alias vimconf="cd ~/.config/nvim/ && nvim ."
  alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"

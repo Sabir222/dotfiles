@@ -3,6 +3,6 @@ return {
   { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true, opts = {
     terminal_colors = true,
     contrast = 'hard',
-    transparent_mode = false,
+    transparent_mode = true,
   } },
 }
