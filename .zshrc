@@ -10,7 +10,7 @@ bindkey '^p' autosuggest-accept
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="sabir"
 
 ## Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -127,9 +127,11 @@ source $ZSH/oh-my-zsh.sh
 ################################################
 # Example aliases
  alias vi='NVIM_APPNAME=nvim-alt nvim'
+alias show="batcat"
  alias dotfiles="cd ~/dotfiles/"
+ alias cd="z"
  #alias vi="/usr/bin/vim"
- alias ls='eza --long --icons=always --no-filesize --no-time --no-user'
+ alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'
  alias vim='NVIM_APPNAME=nvim nvim'
  alias vimconf="cd ~/.config/nvim/ && nvim ."
  alias zshconfig="nvim ~/.zshrc"
@@ -143,3 +145,6 @@ export PATH=$PATH:$HOME/DataGrip-2024.2.2/bin
 export PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer\n"
 . "$HOME/.cargo/env"
+eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+eval $(thefuck --alias fk)
