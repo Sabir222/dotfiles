@@ -82,11 +82,6 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
-
--- Define the list of themes
---local themes = { 'solarized-osaka', 'gruvbox', 'tokyonight', 'onedark', 'rose-pine', 'moonfly' } -- Add your themes here
---TODO: make the a keymap to switch betwwen favorite themes
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)

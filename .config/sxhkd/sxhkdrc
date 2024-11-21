@@ -32,7 +32,7 @@ XF86AudioMute
 
 # terminal emulator
 super + Return
-	Alacritty
+	alacritty
 
 # program launcher
 super + d
