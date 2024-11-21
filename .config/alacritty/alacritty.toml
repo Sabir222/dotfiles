@@ -1,9 +1,6 @@
 [window]
-
 opacity = 0.6
-
 padding.x = 7
 padding.y = 7
-
-
-
+[font]
+size = 14.0
