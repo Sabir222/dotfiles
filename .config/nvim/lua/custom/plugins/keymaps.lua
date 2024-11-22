@@ -14,5 +14,5 @@ return {
   -- Remap Tab to go to Normal mode in Insert mode
   vim.api.nvim_set_keymap('i', '<Tab>', '<Esc>', { noremap = true, silent = true }),
   -- Themery : theme switcher
-  vim.keymap.set({ 'n', 'v' }, '<leader>lt', ':Themery<CR>', {}),
+  vim.keymap.set({ 'n', 'v' }, '<leader>tt', ':Themery<CR>', {}),
 }

@@ -1,10 +1,11 @@
 return {
   'zaldih/themery.nvim',
-  lazy = false,
+  lazy = true,
+  cmd = { 'Themery' },
   config = function()
     require('themery').setup {
       -- add the config here
-      themes = { 'solarized-osaka', 'gruvbox', 'tokyonight', 'onedark', 'rose-pine', 'moonfly' },
+      themes = { 'solarized-osaka', 'gruvbox', 'tokyonight', 'onedark', 'rose-pine', 'moonfly', 'sonokai' },
     }
   end,
 }
