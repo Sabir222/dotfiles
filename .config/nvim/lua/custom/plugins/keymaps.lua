@@ -1,9 +1,9 @@
 return {
+  -- files cmds keymaps
   vim.keymap.set('n', '<;>', ':Neotree toggle<CR>', {}),
   vim.keymap.set({ 'n', 'i' }, '<C-s>', '<Esc>:w<CR>', {}),
   vim.keymap.set({ 'n', 'i' }, '<C-f>', '<Esc>:copy.<CR>', {}),
   vim.keymap.set({ 'n', 'i' }, '<C-x>', '<Esc>:bd<CR>', {}),
-  --vim.keymap.set({ 'n', 'i' }, '<C-z>', '', {}),
   -- CopilotChat keymaps
   vim.keymap.set({ 'n', 'v' }, '<leader>ce', ':CopilotChatExplain<CR>', {}),
   vim.keymap.set({ 'n', 'v' }, '<leader>cr', ':CopilotChatReview<CR>', {}),
@@ -15,4 +15,7 @@ return {
   vim.api.nvim_set_keymap('i', '<Tab>', '<Esc>', { noremap = true, silent = true }),
   -- Themery : theme switcher
   vim.keymap.set({ 'n', 'v' }, '<leader>tt', ':Themery<CR>', {}),
+  -- git plugins keymaps
+  vim.keymap.set({ 'n', 'v' }, '<leader>gn', ':Neogit<CR>', {}),
+  vim.keymap.set({ 'n', 'v' }, '<leader>ll', ':Lazy<CR>', {}),
 }
