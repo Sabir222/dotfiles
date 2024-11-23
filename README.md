@@ -16,3 +16,6 @@
 ## give permission to tmux sessionizer 
 
 chmod +x ~/.local/scripts/tmux-sessionizer
+
+
+- install lazygit
