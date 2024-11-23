@@ -6,7 +6,7 @@ return {
       require('rose-pine').setup {
         variant = 'main', -- auto, main, moon, or dawn
         dark_variant = 'main', -- main, moon, or dawn
-        dim_inactive_windows = false,
+        dim_inactive_windows = true,
         extend_background_behind_borders = true,
 
         enable = {
@@ -18,7 +18,7 @@ return {
         styles = {
           bold = true,
           italic = true,
-          transparency = true,
+          transparency = false,
         },
 
         groups = {
@@ -61,6 +61,21 @@ return {
         },
 
         highlight_groups = {
+          -- WhichKey Customization with Hex Colors
+          WhichKey = { fg = '#eb6f92' }, -- The key
+          WhichKeyGroup = { fg = '#907aa9' }, -- For group names
+          WhichKeyDesc = { fg = '#ea9d34' }, -- For descriptive text
+          -- Telescope Customization with Hex Colors
+          TelescopeNormal = { bg = '#1f1d2e' },
+          TelescopeBorder = { bg = '#1f1d2e', fg = '#ea9d34' },
+          TelescopePromptNormal = { bg = '#1f1d2e' },
+          TelescopePromptBorder = { bg = '#1f1d2e', fg = '#ea9d34' },
+          TelescopePromptTitle = { bg = '#1f1d2e', fg = '#ea9d34' },
+          TelescopePreviewTitle = { bg = '#1f1d2e', fg = '#ea9d34' },
+          TelescopeResultsTitle = { bg = '#1f1d2e', fg = '#ea9d34' },
+          TelescopeSelection = { bg = '#f2e9e1', fg = '#191724' },
+          TelescopeSelectionCaret = { fg = '#ea9d34' },
+          TelescopeMatching = { fg = '#ea9d34', bold = true },
           -- Comment = { fg = "foam" },
           -- VertSplit = { fg = "muted", bg = "muted" },
         },
