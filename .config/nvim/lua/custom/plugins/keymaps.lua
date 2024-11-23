@@ -27,4 +27,11 @@ return {
   vim.keymap.set({ 'n', 'x', 'o' }, 'gf', '<Plug>(leap-from-window)'),
   -- toggle terminal
   vim.keymap.set({ 'n', 'v' }, '<C-`>', ':ToggleTerm<CR>', {}),
+  --
+
+  -- Disable 's' in Normal and Visual modes
+  vim.keymap.set('n', 's', '<Nop>', { noremap = true, silent = true }), -- Normal mode
+  vim.keymap.set('x', 's', '<Nop>', { noremap = true, silent = true }), -- Visual mode
+  -- marks telescope
+  vim.keymap.set({ 'n', 'v' }, '<leader>lm', ':Telescope marks<CR>', {}),
 }
