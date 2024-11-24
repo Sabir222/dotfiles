@@ -2,7 +2,7 @@ return {
   {
     'navarasu/onedark.nvim',
     -- Lua
-    lazy = false,
+    lazy = true,
     opts = {
       -- Main options --
       style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
