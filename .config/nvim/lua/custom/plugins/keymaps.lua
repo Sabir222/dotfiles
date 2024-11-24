@@ -34,4 +34,6 @@ return {
   vim.keymap.set('x', 's', '<Nop>', { noremap = true, silent = true }), -- Visual mode
   -- marks telescope
   vim.keymap.set({ 'n', 'v' }, '<leader>lm', ':Telescope marks<CR>', {}),
+  -- open mason
+  vim.keymap.set({ 'n', 'v' }, '<leader>lc', ':Mason<CR>', {}),
 }

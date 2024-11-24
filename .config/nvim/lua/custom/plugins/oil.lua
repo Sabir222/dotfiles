@@ -1,6 +1,7 @@
 return {
   {
     'stevearc/oil.nvim',
+    priority = 999,
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       CustomOilBar = function()
