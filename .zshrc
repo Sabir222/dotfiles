@@ -10,7 +10,7 @@ bindkey '^p' autosuggest-accept
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="sabir"
+ZSH_THEME="sabir" #or robbyrussell
 
 ## Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -72,7 +72,7 @@ ZSH_THEME="sabir"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(eza zsh-syntax-highlighting zsh-autosuggestions z sudo web-search)
+plugins=(zsh-256color eza zsh-syntax-highlighting zsh-autosuggestions z sudo web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,7 +129,6 @@ source $ZSH/oh-my-zsh.sh
  alias vi='NVIM_APPNAME=nvim-alt nvim'
 alias show="batcat"
  alias dotfiles="cd ~/dotfiles/"
- alias cd="z"
  #alias vi="/usr/bin/vim"
  alias monkeytype="toipe"
  alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'

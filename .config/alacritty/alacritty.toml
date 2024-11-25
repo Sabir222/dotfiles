@@ -3,4 +3,6 @@ opacity = 0.6
 padding.x = 7
 padding.y = 7
 [font]
-size = 18.0
+size = 20.0
+[env]
+term = "xterm-256color"
