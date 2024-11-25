@@ -3,9 +3,26 @@ local function setupCustomSnippets()
   local s = ls.snippet
   local t = ls.text_node
   local i = ls.insert_node
+  vim.keymap.set({ 'i', 's' }, '<A-l>', function()
+    if ls.expand_or_jumpable() then
+      ls.expand_or_jump()
+    end
+  end, { silent = true })
 
+  vim.keymap.set({ 'i', 's' }, '<A-h>', function()
+    if ls.jumpable(-1) then
+      ls.jump(-1)
+    end
+  end, { silent = true })
   -- Common HTML tags snippets
   local snippets = {
+    -- hello world test
+    s('hello', {
+      t { 'Hello, ' },
+      i(1, 'name'),
+      t { ' World , i am ' },
+      i(2, 'name'),
+    }),
     -- Containers
     s('div.', {
       t { '<div>' },
