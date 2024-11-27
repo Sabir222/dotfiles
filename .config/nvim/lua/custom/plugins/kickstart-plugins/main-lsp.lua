@@ -6,11 +6,13 @@ return {
     {
       'williamboman/mason.nvim',
       config = true,
-      ui = {
-        icons = {
-          package_installed = '✓',
-          package_pending = '➜',
-          package_uninstalled = '✗',
+      opts = {
+        ui = {
+          icons = {
+            package_installed = '✓',
+            package_pending = '➜',
+            package_uninstalled = '✗',
+          },
         },
       },
     }, -- NOTE: Must be loaded before dependants
