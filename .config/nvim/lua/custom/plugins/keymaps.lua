@@ -11,8 +11,6 @@ return {
   vim.keymap.set({ 'n', 'v' }, '<leader>cd', ':CopilotChatDocs<CR>', {}),
   vim.keymap.set({ 'n', 'v' }, '<leader>ct', ':CopilotChatTests<CR>', {}),
   vim.keymap.set({ 'n', 'v', 'i' }, '<C-z>', '<Esc>:CopilotChatToggle<CR>', {}),
-  -- Remap Tab to go to Normal mode in Insert mode
-  vim.api.nvim_set_keymap('i', '<Tab>', '<Esc>', { noremap = true, silent = true }),
   -- Themery : theme switcher
   vim.keymap.set({ 'n', 'v' }, '<leader>tt', ':Themery<CR>', {}),
   -- git plugins keymaps
@@ -36,4 +34,6 @@ return {
   vim.keymap.set({ 'n', 'v' }, '<leader>lm', ':Telescope marks<CR>', {}),
   -- open mason
   vim.keymap.set({ 'n', 'v' }, '<leader>lc', ':Mason<CR>', {}),
+  -- diagnostic
+  vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float, { desc = 'Show diagnostics' }),
 }
