@@ -20,9 +20,9 @@ require('lazy').setup({
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-  { import = 'custom.plugins' },
-  { import = 'custom.plugins.themes' },
-  { import = 'custom.plugins.kickstart-plugins' },
+  { import = 'sabir.plugins' },
+  { import = 'sabir.plugins.themes' },
+  { import = 'sabir.plugins.kickstart-plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
