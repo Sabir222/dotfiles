@@ -37,8 +37,6 @@ return {
   -- diagnostic
   vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float, { desc = 'Show diagnostics' }),
   --navigation
-  -- Jump 5 lines down with Ctrl+j
-  vim.api.nvim_set_keymap('n', '<C-j>', '5j', { noremap = true, silent = true }),
-  -- Jump 5 lines up with Ctrl+k
-  vim.api.nvim_set_keymap('n', '<C-k>', '5k', { noremap = true, silent = true }),
+  vim.keymap.set('n', '<C-j>', '5j', { noremap = true, silent = true }),
+  vim.keymap.set('n', '<C-k>', '5k', { noremap = true, silent = true }),
 }
