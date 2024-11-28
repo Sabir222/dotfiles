@@ -36,7 +36,4 @@ return {
   vim.keymap.set({ 'n', 'v' }, '<leader>lc', ':Mason<CR>', {}),
   -- diagnostic
   vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float, { desc = 'Show diagnostics' }),
-  --navigation
-  vim.keymap.set('n', '<C-j>', '5j', { noremap = true, silent = true }),
-  vim.keymap.set('n', '<C-k>', '5k', { noremap = true, silent = true }),
 }
