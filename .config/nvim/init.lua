@@ -1,5 +1,10 @@
 -- Lua initialization file
 vim.g.mapleader = ' '
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    vim.opt.laststatus = 0
+  end,
+})
 require 'options'
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
