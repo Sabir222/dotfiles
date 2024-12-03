@@ -1,10 +1,5 @@
--- vim.api.nvim_create_autocmd('VimEnter', {
---   callback = function()
---     vim.opt.laststatus = 0
---   end,
--- })
---
 vim.g.moonflyTransparent = true
+vim.o.laststatus = 3
 vim.g.have_nerd_font = false
 vim.opt.number = true
 vim.opt.relativenumber = true
