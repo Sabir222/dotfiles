@@ -129,6 +129,7 @@ source $ZSH/oh-my-zsh.sh
  alias vi='NVIM_APPNAME=nvim-alt nvim'
 alias show="batcat"
  alias dotfiles="cd ~/dotfiles/"
+ alias weather="curl wttr.in/essaouira"
  #alias vi="/usr/bin/vim"
  alias monkeytype="toipe"
  alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'
