@@ -126,7 +126,8 @@ source $ZSH/oh-my-zsh.sh
 # preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 ################################################
 # Example aliases
- alias vi='NVIM_APPNAME=nvim-alt nvim'
+ alias cvim='NVIM_APPNAME=nvim-chad nvim'
+ alias avim='NVIM_APPNAME=nvim-astro nvim'
 alias show="batcat"
  alias dotfiles="cd ~/dotfiles/"
  alias weather="curl wttr.in/essaouira"
