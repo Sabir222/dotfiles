@@ -3,14 +3,14 @@ return {
     'zbirenbaum/copilot.lua',
     enabled = true,
     cmd = 'Copilot',
-    lazy = true,
+    lazy = false,
     opts = {
       suggestion = {
         enabled = true,
         auto_trigger = false,
         keymap = {
-          accept = '<M-l>',
-          prev = '<M-[>',
+          accept = '<M-[>',
+          prev = 'M-l',
           next = '<M-]>',
           dismiss = '<C-]>',
         },

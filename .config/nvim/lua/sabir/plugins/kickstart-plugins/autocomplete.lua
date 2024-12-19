@@ -170,6 +170,15 @@ local function setupCustomSnippets()
   ls.add_snippets('javascriptreact', snippets)
   ls.add_snippets('typescript', snippets)
   ls.add_snippets('javascript', snippets)
+  ls.add_snippets('go', {
+    -- Add the Go-specific snippet for `if err != nil`
+    s('iferr', {
+      t { 'if err != nil {' },
+      t { '', '\t' },
+      i(1, 'return err'), -- Default return statement
+      t { '', '}' },
+    }),
+  })
 end
 
 return { -- Autocompletion

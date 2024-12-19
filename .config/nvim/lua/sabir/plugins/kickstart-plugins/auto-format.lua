@@ -41,6 +41,7 @@ return { -- Autoformat
       html = { 'prettierd', 'prettier', stop_after_first = true },
       json = { 'prettierd', 'prettier', stop_after_first = true },
       go = { 'gofumpt', 'goimports', stop_after_first = true },
+      java = { 'google-java-format' },
       sql = { 'sqlfmt' },
       yaml = { 'yamlfmt' },
       c = { 'clang-format' },

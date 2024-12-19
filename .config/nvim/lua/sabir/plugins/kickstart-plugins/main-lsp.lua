@@ -176,6 +176,7 @@ return {
       -- But for many setups, the LSP (`tsserver`) will work just fine
       ts_ls = {},
       prismals = {},
+      jdtls = {},
       html = {},
       --
 
@@ -212,6 +213,7 @@ return {
       'prettier',
       'gofumpt',
       'goimports',
+      'google-java-format',
       'sqlfmt',
       'yamlfmt',
       'clang-format',
