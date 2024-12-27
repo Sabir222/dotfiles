@@ -132,6 +132,7 @@ alias show="batcat"
  alias dotfiles="cd ~/dotfiles/"
  alias weather="curl wttr.in/essaouira"
  #alias vi="/usr/bin/vim"
+ alias ai='aichat'
  alias monkeytype="toipe"
  alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'
  alias vim='NVIM_APPNAME=nvim nvim'
@@ -145,6 +146,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/DataGrip-2024.2.2/bin
 export PATH=$PATH:$HOME/idea-IU-243.22562.145/bin/
+export PATH=$PATH:~/zig-linux-x86_64-0.13.0/
 export PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer\n"
 . "$HOME/.cargo/env"
