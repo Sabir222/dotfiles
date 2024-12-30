@@ -137,6 +137,7 @@ alias show="batcat"
  alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'
  alias vim='NVIM_APPNAME=nvim nvim'
  alias vimconf="cd ~/.config/nvim/ && nvim ."
+ alias goals="show ~/Projects/goals.md"
  alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH=$PATH:/home/sabir/nodejs/bin
