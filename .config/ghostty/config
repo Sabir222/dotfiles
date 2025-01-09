@@ -1,23 +1,20 @@
-# Fonts
-font-family = "Symbols Nerd Font Mono"
-font-family = "Fira Code"
-font-family-bold = "Fira Code"
-font-family-italic = "Maple Mono"
-font-family-bold-italic = "Maple Mono"
-font-size = 10
-adjust-underline-position = 4
+font-family = BerkeleyMono Nerd Font
+#font-family = Iosevka Nerd Font
+theme = catppuccin-frappe
+# font-family = SFMono Nerd Font 
+font-size = 20
+theme = GruvboxDarkHard
+shell-integration-features = no-cursor,sudo,no-title
+cursor-style = block
+adjust-cell-height = 35%
+# background-opacity = 0.96
 
-# Mouse
 mouse-hide-while-typing = true
-# mouse-scroll-multiplier = 1
+mouse-scroll-multiplier = 2
 
-# Theme
-cursor-invert-fg-bg = true
-background-opacity = 0.3
-window-theme = ghostty
-
-# Window
-gtk-single-instance = true
-# Other
-copy-on-select = clipboard
-shell-integration-features = cursor,sudo,no-title
+window-padding-balance = true 
+window-save-state = always
+macos-titlebar-style=transparent
+window-colorspace = "display-p3"
+background = 1C2021
+# foreground = d4be98
