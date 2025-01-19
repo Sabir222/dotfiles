@@ -1,5 +1,4 @@
 return {
-
   { -- Linting
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -7,6 +6,7 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         typescript = { 'eslint_d' },
+        --rust = { 'clippy' },
         javascript = { 'eslint_d' },
         typescriptreact = { 'eslint_d' },
         javascriptreact = { 'eslint_d' },
