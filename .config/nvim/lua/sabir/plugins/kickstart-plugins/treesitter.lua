@@ -11,6 +11,9 @@ return { -- Highlight, edit, and navigate code
       'diff',
       'html',
       'lua',
+      'go',
+      'typescript',
+      'javascript',
       'luadoc',
       'markdown',
       'markdown_inline',
@@ -18,6 +21,7 @@ return { -- Highlight, edit, and navigate code
       'vim',
       'vimdoc',
       'python',
+      'rust',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
