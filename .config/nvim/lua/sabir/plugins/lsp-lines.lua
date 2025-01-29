@@ -6,6 +6,14 @@ return {
       -- Your optional custom configuration can go here
     }
 
-    vim.keymap.set('', '<Leader>e', require('lsp_lines').toggle, { desc = 'Toggle lsp_lines' })
+    -- Toggle off lsp_lines on startup
+    vim.api.nvim_create_autocmd('VimEnter', {
+      callback = function()
+        require('lsp_lines').toggle()
+      end,
+    })
+
+    -- Keymap to toggle lsp_lines
+    vim.keymap.set('n', '<Leader>e', require('lsp_lines').toggle, { desc = 'Toggle lsp_lines' })
   end,
 }
