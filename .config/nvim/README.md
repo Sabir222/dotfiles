@@ -1,3 +1,3 @@
-# My neovim config
+# My neovim cfg
 
 - Based on kickstart.nvim
