@@ -10,7 +10,9 @@ bindkey '^p' autosuggest-accept
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="sabir" #or robbyrussell
+#ZSH_THEME="sabir"
+ZSH_THEME="awesomepanda"
+#ZSH_THEME="robbyrussell" 
 
 ## Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
