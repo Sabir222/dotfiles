@@ -128,3 +128,11 @@ eval $(thefuck --alias fk) # Alias 'fk' for 'thefuck'
 # User Customizations (End of File)
 # ------------------------------------------------------------------------------
 # Add any other personal configurations below this line.
+
+# pnpm
+export PNPM_HOME="/home/sabir/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
