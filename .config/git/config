@@ -80,5 +80,5 @@
 [diff-so-fancy]
     markEmptyLines = false
 [commit]
-    gpgSign = true
+    gpgSign = false
     template = ~/.config/git/template
