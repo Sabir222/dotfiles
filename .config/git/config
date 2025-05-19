@@ -1,0 +1,84 @@
+[user]
+	name = sabir222
+	email = mrsabir4@gmail.com
+	signingkey = C3B9D7943CC95559
+
+[credential]
+	helper = store
+
+[push]
+    autoSetupRemote = true  # easier to push new branches
+    default = current  # push only current branch by default
+    followTags = true  # push also tags
+    gpgSign = false  # my remotes doesn't support sign pushes
+
+[core]
+    pager = delta
+    compression = 9
+    whitespace = error
+    preloadindex = true
+	editor = nvim
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+
+[merge]
+    conflictstyle = zdiff3
+
+[url "git@github.com:Sabir222/"]
+    insteadOf = "sk:"
+
+[url "git@github.com:"]
+    insteadOf = "gh:"
+
+[status]
+    branch = true
+    short = true
+    showStash = true
+    showUntrackedFiles = all
+
+[diff]
+    context = 3
+    renames = copies
+    interHunkContext = 10
+
+[color "branch"]
+    current  = magenta
+    local    = default
+    remote   = yellow
+    upstream = green
+    plain    = blue
+
+[color "blame"]
+    highlightRecent = black bold,1 year ago,white,1 month ago,default,7 days ago,blue
+
+[color "diff"]
+    meta       = black bold
+    frag       = magenta
+    context    = white
+    whitespace = yellow reverse
+[pull]
+    rebase = true
+
+[submodule]
+    fetchJobs = 16
+
+[rebase]
+    autoStash = true
+
+[log]
+    abbrevCommit = true  # short commits
+    graphColors = blue,yellow,cyan,magenta,green,red
+
+[interactive]
+    diffFilter = diff-so-fancy --patch
+    singlekey = true
+[diff-so-fancy]
+    markEmptyLines = false
+[commit]
+    gpgSign = true
+    template = ~/.config/git/template

@@ -25,3 +25,7 @@ chmod +x ~/.local/scripts/tmux-sessionizer
 ### install oh my zsh plugins
 
 add sabir.zsh-theme to custom theme in oh my zsh
+
+### GPG Key Reminder
+
+If I change my PC or generate a new GPG key, remember to update my public GPG key on GitHub to keep commit signing working correctly.
