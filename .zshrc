@@ -24,7 +24,6 @@ zstyle ':omz:update' frequency 13   # check for updates every 13 days
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
-    zsh-256color
     eza
     zsh-autosuggestions
     # zsh-syntax-highlighting # Currently commented out
