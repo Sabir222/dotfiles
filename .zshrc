@@ -51,7 +51,7 @@ export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 # Node.js (generic and nvm)
-export PATH="/home/sabir/nodejs/bin:$PATH"
+export PATH="/opt/nodejs/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 
 # pnpm
