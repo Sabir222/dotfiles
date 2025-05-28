@@ -73,10 +73,10 @@
   }
 ,
 "mpris": {
-  "format": "  {player} | {artist} - {title}",
+  "format": "{player_icon} | {artist} - {title}",
   "player-icons": {
     "spotify": "",
-    "default": "🎵"
+    "default": ""
   },
   "format-paused": "⏸️ {artist} - {title}",
   "format-stopped": "⏹️",

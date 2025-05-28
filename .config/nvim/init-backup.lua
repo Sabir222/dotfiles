@@ -823,6 +823,7 @@ require('lazy').setup({
         'sqlfmt',
         'yamlfmt',
         'clang-format',
+        'eslint_d',
         'prettierd',
         'stylua',
       })
