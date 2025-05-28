@@ -1,6 +1,6 @@
 * {
   font-family: JetbrainsMono Nerd Font;
-  font-size: 12px;
+  font-size: 8px;
   min-height: 0;
   padding-right: 2px;
   padding-left: 2px;
@@ -12,20 +12,17 @@
   background-color: #101010;
   padding: 0.5rem 1rem;
   margin: 5px 0;
-  border-radius: 5px;
 }
 
 #disk {
   color: #ef9f76; /* Choose any color you like */
   background-color: #101010;
-  border-radius: 5px;
   padding: 0.5rem 1rem;
   margin: 5px 0;
 }
 #waybar {
   background: transparent;
   color: #c6d0f5;
-  margin: 2px 2px;
 }
 
 #workspaces {
