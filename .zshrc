@@ -71,6 +71,7 @@ export GIT_CONFIG_GLOBAL="$HOME/.config/git/config"
 # ------------------------------------------------------------------------------
 # Aliases
 # ------------------------------------------------------------------------------
+alias vi='vim'
 alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'
 alias show="batcat"
 alias dotfiles="cd ~/dotfiles/"
