@@ -92,7 +92,7 @@ return {
           -- end
         end,
       }
-      vim.cmd.colorscheme 'rose-pine'
+      --vim.cmd.colorscheme 'catppuccin'
       -- vim.cmd 'colorscheme rose-pine'
       -- vim.cmd("colorscheme rose-pine-main")
       -- vim.cmd("colorscheme rose-pine-moon")

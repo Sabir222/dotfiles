@@ -5,7 +5,7 @@ return {
   config = function()
     require('themery').setup {
       -- add the config here
-      themes = { 'kanagawa', 'solarized-osaka', 'gruvbox', 'tokyonight', 'onedark', 'rose-pine', 'moonfly', 'sonokai', 'lackluster' },
+      themes = { 'kanagawa', 'solarized-osaka', 'gruvbox', 'tokyonight', 'onedark', 'rose-pine', 'moonfly', 'sonokai', 'lackluster', 'catppuccin' },
     }
   end,
 }

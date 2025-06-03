@@ -53,7 +53,7 @@ return {
         map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
       end,
       signs = {
-        add = { text = '✔' },
+        add = { text = '✓' },
         change = { text = '✗' },
         delete = { text = '✄' },
         topdelete = { text = '✄' },
