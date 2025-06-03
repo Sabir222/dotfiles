@@ -6,7 +6,7 @@ return {
     opts = {
       terminal_colors = true,
       contrast = 'hard',
-      transparent_mode = true,
+      transparent_mode = false,
     },
   },
 }
