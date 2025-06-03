@@ -2,6 +2,7 @@ return {
   'bngarren/checkmate.nvim',
   ft = 'markdown', -- Lazy loads for Markdown files matching patterns in 'files'
   opts = {
+    files = { 'todo', 'TODO', '*.todo*', '*.md*' }, -- matches TODO, TODO.md, .todo.md
     keys = {
       ['<leader>to'] = 'toggle', -- Toggle todo item
       ['<leader>tc'] = 'check', -- Set todo item as checked (done)
