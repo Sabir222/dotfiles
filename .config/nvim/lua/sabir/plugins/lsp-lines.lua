@@ -1,5 +1,5 @@
 return {
-  lazy = false,
+  lazy = true,
   'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
   config = function()
     require('lsp_lines').setup {
