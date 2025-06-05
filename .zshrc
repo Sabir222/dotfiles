@@ -71,6 +71,7 @@ export GIT_CONFIG_GLOBAL="$HOME/.config/git/config"
 # ------------------------------------------------------------------------------
 # Aliases
 # ------------------------------------------------------------------------------
+alias gsync='git fetch upstream && git checkout main && git merge upstream/main && git push origin main'
 alias vi='vim'
 alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'
 alias show="bat"
@@ -84,7 +85,7 @@ alias vim='NVIM_APPNAME=nvim nvim'
 alias cvim='NVIM_APPNAME=nvim-chad nvim'
 alias avim='NVIM_APPNAME=nvim-astro nvim'
 alias vimconf="cd ~/.config/nvim/ && nvim ."
-alias zshconfig="nvim ~/.zshrc"
+alias zshconf="nvim ~/.zshrc"
 
 # Project specific
 alias goals="show ~/Projects/goals.md"
