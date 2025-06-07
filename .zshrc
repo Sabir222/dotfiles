@@ -4,14 +4,14 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+export STARSHIP_CONFIG="$HOME/.config/starship/starship-omz.toml"
 eval "$(starship init zsh)"
 # Theme
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="awesomepanda"
 # ZSH_THEME="sabir" # Alternative theme
 #ZSH_THEME="half-life" # Alternative theme
-#ZSH_THEME="norm" # Alternative theme
+ZSH_THEME="norm" # Alternative theme
 #ZSH_THEME="robbyrussell" # Alternative theme
 
 

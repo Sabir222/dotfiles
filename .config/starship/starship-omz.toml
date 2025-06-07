@@ -1,0 +1,265 @@
+format = """
+[╭─](#908caa)$os$username$hostname$directory$terraform$nix_shell$memory_usage$jobs$cmd_duration
+[╰─](#908caa)$character"""
+
+#right_format = """$time$status$shell"""
+
+right_format = """$nodejs$python$rust$golang$java$lua$ruby$php$docker_context$kubernetes$aws$gcloud$azure$cmd_duration$git_status$git_state$git_metrics$status$shell$localip"""
+add_newline = true
+[localip]
+ssh_only = false
+format = "[$localipv4]($style) "
+style = "#c4a7e7"        # Rose Pine iris
+disabled = false
+
+# Add a blank line between shell prompts for breathing room
+
+[character]
+success_symbol = "[❯](#9ccfd8)"  # Rose Pine foam (cyan)
+error_symbol = "[❯](#eb6f92)"    # Rose Pine love (red)
+vicmd_symbol = "[❮](#f6c177)"    # Rose Pine gold
+
+[os]
+format = "[$symbol ]($style)"
+style = "#c4a7e7"  # Rose Pine iris (purple)
+disabled = false
+
+[os.symbols]
+Alpaquita = "🔔"
+Alpine = "🏔️"
+Amazon = "🙂"
+Android = "🤖"
+Arch = "󰣇"
+Artix = "🎗️"
+CentOS = "💠"
+Debian = "🌀"
+DragonFly = "🐉"
+Emscripten = "🔗"
+EndeavourOS = "🚀"
+Fedora = "🎩"
+FreeBSD = "😈"
+Garuda = "🦅"
+Gentoo = "🗜️"
+HardenedBSD = "🛡️"
+Illumos = "🐦"
+Linux = "🐧"
+Mabox = "📦"
+Macos = "🍎"
+Manjaro = "🥭"
+Mariner = "🌊"
+MidnightBSD = "🌘"
+Mint = "🌿"
+NetBSD = "🚩"
+NixOS = "❄️"
+OpenBSD = "🐡"
+OpenCloudOS = "☁️"
+openEuler = "🦉"
+openSUSE = "🦎"
+OracleLinux = "🦴"
+Pop = "🍭"
+Raspbian = "🍓"
+Redhat = "🎩"
+RedHatEnterprise = "🎩"
+Redox = "🧪"
+Solus = "⛵"
+SUSE = "🦎"
+Ubuntu = "🎯"
+Unknown = "❓"
+Windows = "🪟"
+
+[username]
+format = "[$user]($style)[@](#908caa)"  # Rose Pine subtle for @
+style_user = "#9ccfd8"    # Rose Pine foam
+style_root = "#eb6f92"    # Rose Pine love for root
+show_always = false
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style) "
+style = "#56949f"         # Rose Pine pine (muted teal)
+disabled = false
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "#ebbcba"         # Rose Pine rose (warm pink)
+read_only = "🔒"
+read_only_style = "#eb6f92"  # Rose Pine love
+truncation_length = 3
+truncate_to_repo = true
+home_symbol = "🏠"
+
+[directory.substitutions]
+"Documents" = "📚"
+"Downloads" = "📥"
+"Music" = "🎵"
+"Pictures" = "📸"
+"Videos" = "🎬"
+"Desktop" = "🖥️"
+"Projects" = "🚧"
+"Code" = "💻"
+"Development" = "⚡"
+
+[git_branch]
+format = "on [$symbol$branch]($style) "
+symbol = "🌸  "           # More elegant than 🌱, fits Rose Pine aesthetic
+style = "#c4a7e7"        # Rose Pine iris
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "#eb6f92"        # Rose Pine love
+conflicted = "⚡"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = "📦"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "#6e6a86"        # Rose Pine muted
+
+[git_metrics]
+format = "([+$added]($added_style) )([-$deleted]($deleted_style) )"
+added_style = "#56949f"   # Rose Pine pine for additions
+deleted_style = "#eb6f92" # Rose Pine love for deletions
+disabled = false
+
+[package]
+format = "[$symbol$version]($style) "
+symbol = "📦 "
+style = "#f6c177"        # Rose Pine gold
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+symbol = "  "
+style = "#56949f"        # Rose Pine pine (greenish)
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = " "
+style = "#f6c177"        # Rose Pine gold
+
+[rust]
+format = "[$symbol($version )]($style)"
+symbol = "🦀  "
+style = "#eb6f92"        # Rose Pine love (reddish)
+
+[golang]
+format = "[$symbol($version )]($style)"
+symbol = "🐹  "
+style = "#9ccfd8"        # Rose Pine foam
+
+[java]
+format = "[$symbol($version )]($style)"
+symbol = "☕ "
+style = "#eb6f92"        # Rose Pine love
+
+[lua]
+format = "[$symbol($version )]($style)"
+symbol = "🌙  "
+style = "#c4a7e7"        # Rose Pine iris
+
+[ruby]
+format = "[$symbol($version )]($style)"
+symbol = "💎 "
+style = "#ebbcba"        # Rose Pine rose
+
+[php]
+format = "[$symbol($version )]($style)"
+symbol = "🐘 "
+style = "#c4a7e7"        # Rose Pine iris
+
+[docker_context]
+format = "[$symbol$context]($style) "
+symbol = "🐳  "
+style = "#9ccfd8"        # Rose Pine foam
+
+[kubernetes]
+format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)]($style) '
+style = "#56949f"        # Rose Pine pine
+disabled = false
+
+[aws]
+format = 'on [☁️  ($profile )($region )]($style)'
+style = "#f6c177"        # Rose Pine gold
+symbol = "☁️ "
+
+[gcloud]
+format = 'on [☁️ ($account@)($domain )($project )]($style) '
+style = "#9ccfd8"        # Rose Pine foam
+
+[azure]
+format = "on [☁️ ($subscription)]($style) "
+style = "#c4a7e7"        # Rose Pine iris
+
+[terraform]
+format = "[$symbol$workspace]($style) "
+symbol = "💠 "
+style = "#c4a7e7"        # Rose Pine iris
+
+[nix_shell]
+format = '[$symbol$state( \($name\))]($style) '
+symbol = "❄️ "
+style = "#9ccfd8"        # Rose Pine foam
+
+[memory_usage]
+format = "$symbol[$ram( | $swap)]($style) "
+threshold = 70
+style = "#908caa"        # Rose Pine subtle
+symbol = "🐏 "
+disabled = false
+
+[jobs]
+format = "[$symbol$number]($style) "
+symbol = "⚙️ "
+style = "#f6c177"        # Rose Pine gold
+
+[cmd_duration]
+format = "took [$duration]($style) "
+min_time = 2000
+style = "#f6c177"        # Rose Pine gold
+
+[time]
+format = '[$time]($style) '
+style = "#908caa"        # Rose Pine subtle
+disabled = false
+
+[status]
+format = '[$symbol$status]($style) '
+symbol = "❌ "
+style = "#eb6f92"        # Rose Pine love
+disabled = false
+
+[shell]
+format = "[$indicator]($style)"
+fish_indicator = "🐠"
+powershell_indicator = "💙"
+bash_indicator = "🐧"
+zsh_indicator = "⚡"
+style = "#ebbcba"        # Rose Pine rose
+disabled = false
+
+# Rose Pine inspired custom modules for extra elegance
+[env_var.ROSE_PINE_VARIANT]
+format = "[$env_value]($style) "
+style = "#908caa"
+disabled = true
+
+# Additional Rose Pine colors for reference:
+# Main palette:
+# - Base: #191724 (background)
+# - Surface: #1f1d2e
+# - Overlay: #26233a
+# - Muted: #6e6a86
+# - Subtle: #908caa
+# - Text: #e0def4
+# - Love: #eb6f92 (red)
+# - Gold: #f6c177 (yellow)
+# - Rose: #ebbcba (warm pink)
+# - Pine: #31748f → #56949f (teal/green)
+# - Foam: #9ccfd8 (cyan)
+# - Iris: #c4a7e7 (purple)
