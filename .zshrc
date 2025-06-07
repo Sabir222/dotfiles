@@ -9,7 +9,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="awesomepanda"
 # ZSH_THEME="sabir" # Alternative theme
- ZSH_THEME="robbyrussell" # Alternative theme
+#ZSH_THEME="half-life" # Alternative theme
+ZSH_THEME="norm" # Alternative theme
+#ZSH_THEME="robbyrussell" # Alternative theme
+
 
 # Autosuggestion color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
