@@ -1,11 +1,13 @@
 { pkgs, ... }: {
   users.users.sabir = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     description = "sabir";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       neovim
       ghostty
+      spotify
       bat
       ripgrep
       neofetch
