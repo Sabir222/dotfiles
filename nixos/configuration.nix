@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "sabirlinux"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -85,11 +85,27 @@
     packages = with pkgs; [
     #  thunderbird
 	neovim
+	bat
+	ripgrep
+	neofetch
+	wget
+	nnn
+	curl
+	btop
+	file
+	fd
+	jq
+	clang
+	gcc
+	zoxide
+	fzf
+	tmux
 	python313
 	unzip
 	xclip
   	wl-clipboard
 	starship
+	go
 	stow
 	brave
 	openssl
