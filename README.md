@@ -10,6 +10,15 @@
 ═══════════════════════════════════════════════════════════════
 ## Must do!
 
+```bash
+sudo rm -r /etc/nixos
+
+```
+```bash
+
+sudo ln -s /home/sabir/dotfiles/nixos /etc/nixos
+```
+
 - add ~/.tmux.conf file and then run in terminal " tmux source ~/.tmux.conf"
 
 ```bash
