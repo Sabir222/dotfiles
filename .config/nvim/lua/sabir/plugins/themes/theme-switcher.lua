@@ -6,6 +6,7 @@ return {
     require('themery').setup {
       -- add the config here
       themes = {
+        'darcubox',
         'gruvbuddy',
         'kanagawa',
         'solarized-osaka',

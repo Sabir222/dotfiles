@@ -2,7 +2,7 @@ return {
   {
     'ellisonleao/gruvbox.nvim',
     config = true,
-    lazy = false,
+    lazy = true,
     opts = {
       terminal_colors = true,
       contrast = 'hard',
