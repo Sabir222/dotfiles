@@ -98,6 +98,8 @@
     packages = with pkgs; [
     #  thunderbird
 	neovim
+        zip
+        spotify
 	ghostty
 	bat
 	ripgrep
