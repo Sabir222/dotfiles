@@ -1,15 +1,15 @@
 { config, pkgs, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-    ../../modules/desktop.nix
-    ../../modules/fonts.nix
-    ../../modules/networking.nix
-    ../../modules/sound.nix
-    ../../modules/packages.nix
-    ../../modules/zsh.nix
-    ../../users/sabir.nix
-  ];
-
+imports = [
+  ./hardware-configuration.nix
+  ../../modules/bootloader.nix
+  ../../modules/desktop.nix
+  ../../modules/fonts.nix
+  ../../modules/networking.nix
+  ../../modules/sound.nix
+  ../../modules/packages.nix
+  ../../modules/zsh.nix
+  ../../users/sabir.nix
+];
   networking.hostName = "sabirlinux";
   time.timeZone = "Africa/Casablanca";
   i18n.defaultLocale = "en_US.UTF-8";
