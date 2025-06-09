@@ -817,6 +817,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua',
         'black',
+        'nixpkgs-fmt',
         'prettier',
         'gofumpt',
         'goimports',
@@ -826,6 +827,7 @@ require('lazy').setup({
         'eslint_d',
         'prettierd',
         'stylua',
+        'lua-language-server'
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

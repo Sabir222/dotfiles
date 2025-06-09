@@ -6,6 +6,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       swww
+      pnpm_9
       neovim
       waybar
       ghostty
