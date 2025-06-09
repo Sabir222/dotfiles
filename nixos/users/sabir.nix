@@ -49,6 +49,6 @@
     ];
   };
 
-  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = false;
   services.displayManager.autoLogin.user = "sabir";
 }
