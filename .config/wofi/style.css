@@ -1,0 +1,98 @@
+* {
+    font-family: "Inter", "SF Pro Display", system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+window {
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(20, 20, 20, 0.95);
+    border-radius: 12px;
+    backdrop-filter: blur(24px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+#input {
+    margin: 20px 20px 16px 20px;
+    padding: 14px 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 300;
+    transition: border-color 0.3s ease;
+}
+
+#input:focus {
+    border-bottom-color: #ffffff;
+    outline: none;
+}
+
+#inner-box {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+}
+
+#text {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+}
+
+#entry {
+    margin: 0;
+    padding: 14px 20px;
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+}
+
+#entry:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+#entry:selected {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+#entry:selected #text {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Minimal scrollbar */
+scrollbar {
+    background-color: transparent;
+    width: 2px;
+}
+
+scrollbar slider {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 1px;
+    border: none;
+    min-height: 20px;
+}
+
+scrollbar slider:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
