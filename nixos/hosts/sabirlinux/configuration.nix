@@ -1,15 +1,16 @@
 { config, pkgs, ... }: {
-imports = [
-  ./hardware-configuration.nix
-  ../../modules/bootloader.nix
-  ../../modules/desktop.nix
-  ../../modules/fonts.nix
-  ../../modules/networking.nix
-  ../../modules/sound.nix
-  ../../modules/packages.nix
-  ../../modules/zsh.nix
-  ../../users/sabir.nix
-];
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/tempApps.nix
+    ../../modules/bootloader.nix
+    ../../modules/desktop.nix
+    ../../modules/fonts.nix
+    ../../modules/networking.nix
+    ../../modules/sound.nix
+    ../../modules/packages.nix
+    ../../modules/zsh.nix
+    ../../users/sabir.nix
+  ];
   networking.hostName = "sabirlinux";
   time.timeZone = "Africa/Casablanca";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -26,6 +27,6 @@ imports = [
   };
 
   system.stateVersion = "25.05";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.variables.EDITOR = "nvim";
 }
