@@ -19,3 +19,5 @@ normal = { family = "CaskaydiaCove Nerd Font" }
 
 [env]
 term = "xterm-256color"
+[colors.primary]
+foreground = "#7F8CAA"

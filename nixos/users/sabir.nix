@@ -5,6 +5,7 @@
     description = "sabir";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      swww
       neovim
       waybar
       ghostty
