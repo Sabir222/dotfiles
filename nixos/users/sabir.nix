@@ -6,7 +6,9 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       neovim
+      waybar
       ghostty
+      wofi
       spotify
       bat
       ripgrep
