@@ -1,17 +1,153 @@
-font-family = BerkeleyMono Nerd Font
-#font-family = Iosevka Nerd Font
-theme = catppuccin-frappe
-# font-family = SFMono Nerd Font 
-font-size = 20
-theme = CyberpunkScarletProtocol
-shell-integration-features = no-cursor,sudo,no-title
-cursor-style = block
-adjust-cell-height = 35%
-# background-opacity = 0.96
+# Ultimate Ghostty Terminal Configuration
+# Place this file at: ~/.config/ghostty/config
 
+# =============================================================================
+# FONT CONFIGURATION
+# =============================================================================
+
+font-family = "CaskaydiaCove Nerd Font"
+# font-family = "Fira Code"
+# font-family = "Cascadia Code"
+# font-family = "SF Mono"
+
+font-size = 14
+
+# Font features for enhanced readability
+font-feature = "liga"  # Enable ligatures
+font-feature = "calt"  # Contextual alternates
+font-feature = "ss01"  # Stylistic set 1 (varies by font)
+
+# =============================================================================
+# THEME AND COLORS
+# =============================================================================
+
+theme = "tokyonight_night"
+
+background = #101010
+foreground = #7E99A3
+cursor-color = #d3d3d3
+selection-background = #33467c
+selection-foreground = #c0caf5
+
+palette = 0=#15161e
+palette = 1=#f7768e
+palette = 2=#9ece6a
+palette = 3=#e0af68
+palette = 4=#7aa2f7
+palette = 5=#bb9af7
+palette = 6=#7dcfff
+palette = 7=#a9b1d6
+palette = 8=#414868
+palette = 9=#f7768e
+palette = 10=#9ece6a
+palette = 11=#e0af68
+palette = 12=#7aa2f7
+palette = 13=#bb9af7
+palette = 14=#7dcfff
+palette = 15=#c0caf5
+
+# =============================================================================
+# WINDOW AND APPEARANCE
+# =============================================================================
+
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+window-decoration = true
+window-title-font-family = "SF Pro Display"
+
+background-opacity = 1
+unfocused-split-opacity = 0.7
+
+cursor-style = "block"
+cursor-style-blink = false
 mouse-hide-while-typing = true
-mouse-scroll-multiplier = 2
 
-window-save-state = always
-background = 1C2021
-window-decoration = false
+# =============================================================================
+# PERFORMANCE OPTIMIZATION
+# =============================================================================
+
+scrollback-limit = 10000
+resize-overlay = "after-first"
+resize-overlay-position = "top-right"
+
+macos-non-native-fullscreen = false
+macos-titlebar-style = "native"
+
+# =============================================================================
+# KEYBINDINGS AND SHORTCUTS
+# =============================================================================
+
+# Corrected keybinding format
+keybind = "ctrl+shift+r=reload_config"
+keybind = "ctrl+shift+i=inspector:toggle"
+
+# =============================================================================
+# MOUSE AND INTERACTION
+# =============================================================================
+
+mouse-shift-capture = false
+mouse-scroll-multiplier = 3
+copy-on-select = false
+click-repeat-interval = 500
+
+auto-update = "check"
+confirm-close-surface = false
+
+# =============================================================================
+# SHELL AND INTEGRATION
+# =============================================================================
+
+shell-integration = "zsh"
+shell-integration-features = "cursor,sudo,title"
+
+working-directory = "inherit"
+
+# =============================================================================
+# ADVANCED FEATURES
+# =============================================================================
+
+desktop-notifications = true
+bold-is-bright = false
+
+wait-after-command = false
+abnormal-command-exit-runtime = 2000
+
+clipboard-read = "allow"
+clipboard-write = "allow"
+
+# =============================================================================
+# ADDITIONAL OPTIMIZATIONS
+# =============================================================================
+
+minimum-contrast = 1.0
+
+# focus-follows-mouse = true
+
+# =============================================================================
+# PLATFORM-SPECIFIC SETTINGS
+# =============================================================================
+
+macos-option-as-alt = true
+macos-window-shadow = true
+
+# =============================================================================
+# NOTES AND CUSTOMIZATION TIPS
+# =============================================================================
+
+# Font alternatives to try:
+# - "Berkeley Mono" (premium)
+# - "MonoLisa" (premium)
+# - "Operator Mono" (premium)
+# - "Victor Mono" (free, with cursive italics)
+# - "Iosevka" (free, highly customizable)
+
+# Popular alternative themes:
+# - "catppuccin_mocha"
+# - "dracula"
+# - "nord"
+# - "gruvbox_dark"
+# - "solarized_dark"
+
+# For different color schemes, you can also use:
+# config-file = "~/.config/ghostty/themes/custom.conf"

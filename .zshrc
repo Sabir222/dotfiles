@@ -16,7 +16,7 @@ ZSH_THEME="norm" # Alternative theme
 
 
 # Autosuggestion color
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#222222"
 
 # Oh My Zsh Update Settings
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
