@@ -148,3 +148,8 @@ alias vimconf='cd ~/.config/nvim/ && nvim ~/.config/nvim/'
 alias vim='nvim'
 alias bashconf="nvim ~/.bashrc"
 . "$HOME/.cargo/env"
+
+. "$HOME/.atuin/bin/env"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"

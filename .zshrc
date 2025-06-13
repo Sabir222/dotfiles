@@ -28,7 +28,6 @@ zstyle ':omz:update' frequency 13   # check for updates every 13 days
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
-    eza
     zsh-autosuggestions
     # zsh-syntax-highlighting # Currently commented out
     sudo
@@ -113,7 +112,7 @@ bindkey -s '^f' "tmux-sessionizer\n"
 
 # Rust - Cargo
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-
+export PATH="$HOME/.cargo/bin:$PATH"
 # The Fuck - command line spell checker
 eval $(thefuck --alias)
 eval $(thefuck --alias fk) # Alias 'fk' for 'thefuck'
@@ -149,3 +148,7 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
