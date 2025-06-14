@@ -41,7 +41,7 @@
 
 "disk": {
   "interval": 60,
-  "format": " {used}/{total}",
+  "format": "  {used}/{total}",
   "path": "/"
 },
   "network": {
@@ -60,14 +60,14 @@
 
   "memory": {
     "interval": 30,
-    "format": "  {used:0.1f}G/{total:0.1f}G"
+    "format": "  {used:0.1f}G/{total:0.1f}G"
   },
 
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "]
+       "default": ["", "", " "]
     },
     "on-click": "pavucontrol"
   }
