@@ -1,0 +1,106 @@
+* {
+    background-color: #151515;
+    text-color: #504238;
+    border-color: #504238;
+    separatorcolor: #504238;
+    
+    font: "mono 11";
+    padding: 0;
+    margin: 0;
+    spacing: 0;
+}
+
+window {
+    background-color: #151515;
+    border: 1px solid;
+    border-color: #504238;
+    padding: 8px;
+    width: 30%;
+    location: center;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, listview ];
+    spacing: 8px;
+}
+
+inputbar {
+    background-color: transparent;
+    children: [ prompt, textbox-prompt-colon, entry ];
+    spacing: 0;
+    padding: 4px 0;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: #504238;
+    padding: 0 8px 0 0;
+}
+
+textbox-prompt-colon {
+    background-color: transparent;
+    text-color: #504238;
+    expand: false;
+    str: ":";
+    padding: 0 4px 0 0;
+}
+
+entry {
+    background-color: transparent;
+    text-color: #a0958a;
+    placeholder: "";
+    blink: false;
+}
+
+listview {
+    background-color: transparent;
+    lines: 10;
+    columns: 1;
+    scrollbar: false;
+    cycle: false;
+    dynamic: true;
+    layout: vertical;
+}
+
+element {
+    background-color: transparent;
+    text-color: #504238;
+    padding: 2px 0;
+}
+
+element selected {
+    background-color: #6b5940;
+    text-color: #151515;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    highlight: none;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 0;
+}
+
+scrollbar {
+    handle-color: #504238;
+    handle-width: 0;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    background-color: transparent;
+    text-color: #504238;
+    padding: 2px 8px;
+}
+
+button selected {
+    background-color: #6b5940;
+    text-color: #151515;
+}
