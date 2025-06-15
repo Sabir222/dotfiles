@@ -10,8 +10,8 @@
 # ══════════════════════════════════════════════════════════════════════════════
 [window]
 opacity =  1
-padding.x = 5
-padding.y = 5
+padding.x = 2
+padding.y = 1
 
 [font]
 size = 16.0

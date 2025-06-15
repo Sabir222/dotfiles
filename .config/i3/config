@@ -34,7 +34,7 @@ exec --no-startup-id kwalletd5
 exec --no-startup-id xautolock -time 10 -locker i3lock
 
 # Start i3bar
-exec --no-startup-id i3bar
+#exec --no-startup-id i3bar
 
 #####################
 ### LOOK AND FEEL ###
@@ -46,15 +46,14 @@ default_floating_border pixel 1
 
 # Colors (matching your Hyprland theme)
 # class                 border  backgr. text    indicator child_border
-client.focused          #33ccff #285577 #ffffff #2e9ef4   #33ccff
-client.focused_inactive #595959 #5f676a #ffffff #484e50   #595959
-client.unfocused        #595959 #222222 #888888 #292d2e   #595959
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
+client.focused          #0B192C #0B192C #ffffff #0B192C  #0B192C
+client.focused_inactive #3c3c3c #1a1a1a #888888 #2c2c2c   #3c3c3c
+client.unfocused        #2c2c2c #0f0f0f #666666 #1a1a1a   #2c2c2c
+client.urgent           #1a1a1a #cc2936 #ffffff #cc2936   #cc2936
+client.placeholder      #0f0f0f #050505 #333333 #0a0a0a   #0f0f0f
 # Gaps (install i3-gaps for this to work)
-gaps inner 5
-gaps outer 1
+#gaps inner 5
+#gaps outer 1
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -174,13 +173,14 @@ bindsym $mod+r mode "resize"
 # Status bar with i3blocks
 bar {
     status_command i3blocks
+    separator_symbol "::"
     position top
     font pango:monospace 8
     height 18
     colors {
     statusline #504238
     background #151515
-    separator #504238
+    separator #ffffff
     
     focused_workspace  #6b5940 #6b5940 #151515
     active_workspace   #3a2f26 #3a2f26 #a0958a

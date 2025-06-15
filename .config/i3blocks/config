@@ -1,4 +1,9 @@
 # i3blocks config example
+[disk]
+command=df -h / | awk 'NR==2 {print $4 " free"}'
+interval=60
+label=disk 
+color=#9b8d7f
 # CPU usage Block
 [cpu]
 command=top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}'
@@ -27,9 +32,21 @@ interval=1
 label=vol 
 color=#9b8d7f
 
+[dnf-updates]
+command=~/.config/i3blocks/scripts/dnf-updates.sh
+interval=600
+color=#FFFF00
+
+[public-ip]
+command=wget -qO - icanhazip.com
+interval=once
+color=#347433
+
 # Date/Time Block
 [time]
-command=date "+%Y-%m-%d %H:%M:%S "
+command=date "+%d-%m-%Y %H:%M:%S"
 interval=1
 label=time 
 color=#9b8d7f
+
+
