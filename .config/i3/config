@@ -25,7 +25,7 @@ exec --no-startup-id $terminal
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Set wallpaper (using feh instead of swww)
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/19.png
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/5.png
 
 # Start kwalletd5
 exec --no-startup-id kwalletd5
@@ -159,10 +159,10 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl -p spotify previous
 
 # Resize mode
 mode "resize" {
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym j resize grow height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym j resize grow height 5 px or 5 ppt
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym l resize grow width 5 px or 5 ppt
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
