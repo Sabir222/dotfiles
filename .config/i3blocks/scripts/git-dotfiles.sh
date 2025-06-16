@@ -1,5 +1,5 @@
 #!/bin/bash
-DOTFILES_DIR="$HOME/.dotfiles"  # Adjust this path to your dotfiles location
+DOTFILES_DIR="$HOME/dotfiles"  # Adjust this path to your dotfiles location
 
 # Check if directory exists and is a git repo
 if [ ! -d "$DOTFILES_DIR" ] || [ ! -d "$DOTFILES_DIR/.git" ]; then
@@ -30,22 +30,22 @@ else
     COLOR="#FFA500"  # Orange by default
     
     if [ "$UNTRACKED" -gt 0 ]; then
-        SYMBOLS="${SYMBOLS}+"
+        SYMBOLS="${SYMBOLS} +"
         COLOR="#FFFF00"  # Yellow for new files
     fi
     
     if [ "$MODIFIED" -gt 0 ]; then
-        SYMBOLS="${SYMBOLS}*"
+        SYMBOLS="${SYMBOLS} ✗"
         COLOR="#FF6B6B"  # Red for modifications
     fi
     
     if [ "$DELETED" -gt 0 ]; then
-        SYMBOLS="${SYMBOLS}-"
+        SYMBOLS="${SYMBOLS} -"
         COLOR="#FF6B6B"  # Red for deletions
     fi
     
     if [ "$ADDED" -gt 0 ]; then
-        SYMBOLS="${SYMBOLS}A"
+        SYMBOLS="${SYMBOLS} A"
         COLOR="#4ECDC4"  # Green for staged
     fi
     
