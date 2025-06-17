@@ -21,3 +21,6 @@ normal = { family = "CaskaydiaCove Nerd Font" }
 term = "xterm-256color"
 [colors.primary]
 foreground = "#7F8CAA"
+
+[scrolling]
+history = 10000

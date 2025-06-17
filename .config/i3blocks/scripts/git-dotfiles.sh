@@ -49,7 +49,7 @@ else
         COLOR="#4ECDC4"  # Green for staged
     fi
     
-    echo "git$SYMBOLS"
-    echo "git$SYMBOLS"
+    echo "$SYMBOLS"
+    echo "$SYMBOLS"
     echo "$COLOR"
 fi

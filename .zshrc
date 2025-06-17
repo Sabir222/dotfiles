@@ -64,7 +64,7 @@ export PATH="$HOME/.pnpm-global/bin:$PATH" # For globally installed pnpm package
 
 # JetBrains IDEs & other tools
 export PATH="/home/sabir/GoLand-2024.1.2/bin:$PATH"
-export PATH="$HOME/DataGrip-2024.2.2/bin:$PATH"
+export PATH="/opt/datagrip/bin:$PATH"
 export PATH="$HOME/idea-IU-243.22562.145/bin:$PATH"
 export PATH="$HOME/zig-linux-x86_64-0.13.0:$PATH" # Zig compiler
 

@@ -3,6 +3,10 @@ command=~/.config/i3blocks/scripts/git-dotfiles.sh
 interval=30
 signal=13
 
+[docker]
+command=~/.config/i3blocks/scripts/docker-info.sh
+interval=30
+
 [disk]
 command=df -h / | awk 'NR==2 {print $4 " free"}'
 interval=60
@@ -48,9 +52,8 @@ color=#347433
 
 # Date/Time Block
 [time]
-command=date "+%d-%m-%Y %H:%M:%S"
+command=date "+%A %d-%m-%Y %H:%M:%S"
 interval=1
-label=time 
 color=#9b8d7f
 
 
