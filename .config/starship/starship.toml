@@ -126,6 +126,11 @@ format = "[$symbol$version]($style) "
 symbol = "📦 "
 style = "#f6c177"        # Rose Pine gold
 
+[typescript]
+format = "[$symbol($version )]($style)"
+symbol = " "
+style = "#56949f"
+
 [nodejs]
 format = "[$symbol($version )]($style)"
 symbol = "  "
