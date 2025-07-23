@@ -5,11 +5,11 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        typescript = { 'eslint_d' },
+        --typescript = { 'eslint_d' },
         --rust = { 'clippy' },
-        javascript = { 'eslint_d' },
-        typescriptreact = { 'eslint_d' },
-        javascriptreact = { 'eslint_d' },
+        --javascript = { 'eslint_d' },
+        --typescriptreact = { 'eslint_d' },
+        --javascriptreact = { 'eslint_d' },
         go = { 'golangcilint' },
       }
 

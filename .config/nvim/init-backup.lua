@@ -782,7 +782,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        ts_ls = {},
+        --ts_ls = {},
         prismals = {},
         html = {},
         --
@@ -821,13 +821,13 @@ require('lazy').setup({
         'prettier',
         'gofumpt',
         'goimports',
+        --'typescript-language-server',
         'sqlfmt',
         'yamlfmt',
         'clang-format',
-        'eslint_d',
         'prettierd',
         'stylua',
-        'lua-language-server'
+        'lua-language-server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
