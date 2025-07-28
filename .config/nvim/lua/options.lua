@@ -13,6 +13,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
+vim.opt.spelllang = 'en_us'
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.splitright = true

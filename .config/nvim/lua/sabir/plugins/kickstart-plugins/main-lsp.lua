@@ -189,6 +189,18 @@ return {
       --ts_ls = {},
       prismals = {},
       jdtls = {},
+      -- sqls = {
+      --   settings = {
+      --     sqls = {
+      --       connections = {
+      --         {
+      --           driver = 'postgres',
+      --           dataSourceName = 'postgresql://sabir:pw@localhost:5432/booklab_db?sslmode=disable',
+      --         },
+      --       },
+      --     },
+      --   },
+      -- },
       html = {},
       --
 
