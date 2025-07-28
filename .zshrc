@@ -32,6 +32,7 @@ plugins=(
     # zsh-syntax-highlighting # Currently commented out
     sudo
     web-search
+    tmuxinator
     z
 )
 
@@ -70,7 +71,8 @@ export PATH="$HOME/zig-linux-x86_64-0.13.0:$PATH" # Zig compiler
 
 # Git global config
 export GIT_CONFIG_GLOBAL="$HOME/.config/git/config"
-
+#ruby
+export PATH="$HOME/bin:/home/sabir/.local/share/gem/ruby/bin:$PATH"
 # ------------------------------------------------------------------------------
 # Aliases
 # ------------------------------------------------------------------------------

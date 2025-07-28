@@ -1,0 +1,23 @@
+# /home/sabir/.config/tmuxinator/booklab.yml
+name: booklab
+root: /home/sabir/Projects/BookLab
+windows:
+  - root:
+      panes:
+        -
+      # opens in /home/sabir/Project/booklab (Turborepo root)
+  - server-dir:
+      root: ./apps/server
+      panes:
+        - nvim .
+  - db-package:
+      root: ./packages/db
+      panes:
+        - nvim .
+  - db-nvim:
+      panes:
+        - nvim -c 'DBUI'
+  - run-server:
+      root: ./apps/server
+      panes:
+        - bun run dev
