@@ -32,7 +32,6 @@ plugins=(
     # zsh-syntax-highlighting # Currently commented out
     sudo
     web-search
-    tmuxinator
     z
 )
 
@@ -97,6 +96,12 @@ alias zshconf="nvim ~/.zshrc"
 # Project specific
 alias goals="show ~/Projects/goals.md"
 
+#tmuxinator
+alias txs='tmuxinator start'
+alias txo='tmuxinator open'
+alias txn='tmuxinator new'
+alias txl='tmuxinator list'
+alias txc='tmuxinator stop'
 # ------------------------------------------------------------------------------
 # Keybindings
 # ------------------------------------------------------------------------------

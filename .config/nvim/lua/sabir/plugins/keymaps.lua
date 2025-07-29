@@ -34,4 +34,23 @@ return {
   vim.keymap.set({ 'n', 'v' }, '<leader>lc', ':Mason<CR>', {}),
   -- diagnostic
   vim.keymap.set('n', '<leader>x', vim.diagnostic.open_float, { desc = 'Show diagnostics' }),
+  -- spectre search and replce
+  vim.keymap.set('n', '<leader>ts', '<cmd>lua require("spectre").toggle()<CR>', {
+    desc = 'Search & Replace Project',
+  }),
+  vim.keymap.set('n', '<leader>tw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+    desc = 'Search & Replace current word',
+  }),
+  vim.keymap.set('v', '<leader>tw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+    desc = 'Search current word',
+  }),
+  vim.keymap.set('n', '<leader>tf', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+    desc = 'Search & Replace current file',
+  }),
+  -- vim.keymap.set({ 'n', 'v' }, '<leader>ts', function()
+  --   require('spectre').open()
+  -- end, { desc = 'Search replace in Project' }),
+  -- vim.keymap.set('n', '<leader>tf', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+  --   desc = 'Search on current file',
+  -- }),
 }
