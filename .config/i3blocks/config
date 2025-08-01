@@ -19,6 +19,12 @@ interval=5
 label=cpu 
 color=#9b8d7f
 
+[gpu]
+command=~/.config/i3blocks/scripts/gpu-usage.nvidia.sh
+interval=5
+label=gpu
+color=#9b8d7f
+
 # Battery Block
 [battery]
 command=acpi -b | grep -o '[0-9]*%' | tr -d '%'

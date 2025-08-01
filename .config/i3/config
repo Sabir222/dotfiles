@@ -1,6 +1,11 @@
 # Set the mod key (Super key)
 set $mod Mod4
 
+
+#monitors
+exec xrandr --output HDMI-1 --pos 0x0 --output DP-3 --pos 1920x0
+set $fm HDMI-1
+set $sm DP-3
 # Font for window titles and bar
 font pango:monospace 8
 
@@ -110,7 +115,17 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+#
 
+workspace 1 output $sm
+workspace 2 output $sm
+workspace 3 output $fm
+workspace 4 output $fm
+workspace 5 output $fm
+workspace 6 output $fm
+workspace 7 output $fm
+workspace 8 output $fm
+workspace 9 output $fm
 # Move windows to workspaces
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
