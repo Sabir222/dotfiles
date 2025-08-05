@@ -75,6 +75,8 @@ export PATH="$HOME/bin:/home/sabir/.local/share/gem/ruby/bin:$PATH"
 # ------------------------------------------------------------------------------
 # Aliases
 # ------------------------------------------------------------------------------
+
+alias start-db="docker start booklab_redis_db booklab-db"
 alias lt='lsd --tree --all --icon always --ignore-glob ".git|node_modules"'
 alias gsync='git fetch upstream && git checkout main && git merge upstream/main && git push origin main'
 alias packages='vim ~/dotfiles/nixos/users/sabir.nix'

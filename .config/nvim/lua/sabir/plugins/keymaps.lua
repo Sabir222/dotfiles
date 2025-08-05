@@ -1,6 +1,6 @@
 return {
   -- files cmds keymaps
-
+  vim.keymap.set('n', '<leader>d', ':DBUI<CR>'),
   --vim.keymap.set('n', '<;>', ':Neotree toggle<CR>', {}),
   vim.keymap.set({ 'n', 'i' }, '<C-s>', '<Esc>:w<CR>', {}),
   vim.keymap.set({ 'n', 'i' }, '<C-f>', '<Esc>:copy.<CR>', {}),
