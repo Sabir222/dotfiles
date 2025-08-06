@@ -13,7 +13,7 @@ return {
   -- vim.keymap.set({ 'n', 'v' }, '<leader>ct', ':CopilotChatTests<CR>', {}),
   -- vim.keymap.set({ 'n', 'v', 'i' }, '<C-z>', '<Esc>:CopilotChatToggle<CR>', {}),
   -- Themery : theme switcher
-  vim.keymap.set({ 'n', 'v' }, '<leader>tt', ':Themery<CR>', {}),
+  vim.keymap.set({ 'n', 'v' }, '<leader>tz', ':Themery<CR>', {}),
   -- git plugins keymaps
   vim.keymap.set({ 'n', 'v' }, '<leader>gn', ':Neogit<CR>', {}),
   vim.keymap.set({ 'n', 'v' }, '<leader>gdo', ':DiffviewOpen<CR>', {}),
