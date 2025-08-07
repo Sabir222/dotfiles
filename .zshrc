@@ -162,3 +162,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+export DOCKER_BUILDKIT=0
