@@ -1,0 +1,24 @@
+return {
+  -- 'rest-nvim/rest.nvim',
+  -- rocks = {
+  --   enabled = false,
+  --   hererocks = false,
+  -- },
+  -- dependencies = {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   opts = function(_, opts)
+  --     opts.ensure_installed = opts.ensure_installed or {}
+  --     table.insert(opts.ensure_installed, 'http')
+  --   end,
+  -- },
+  -- config = function()
+  --   vim.g.rest_nvim = {
+  --     result_split_horizontal = false,
+  --     skip_ssl_verification = false,
+  --     highlight = {
+  --       enabled = true,
+  --       timeout = 150,
+  --     },
+  --   }
+  -- end,
+}

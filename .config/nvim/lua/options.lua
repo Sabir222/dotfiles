@@ -1,4 +1,5 @@
 vim.g.moonflyTransparent = true
+--vim.opt.colorcolumn = '80'
 vim.o.laststatus = 3
 vim.g.have_nerd_font = false
 vim.opt.number = true
