@@ -24,3 +24,7 @@ foreground = "#7F8CAA"
 
 [scrolling]
 history = 10000
+[keyboard]
+bindings = [
+    { key = "Space", mods = "Control", action = "ToggleViMode" },
+]
