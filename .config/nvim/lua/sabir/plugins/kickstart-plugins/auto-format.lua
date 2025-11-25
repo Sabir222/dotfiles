@@ -32,6 +32,7 @@ return { -- Autoformat
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
+      zig = { 'zigfmt' },
       nix = { 'nixpkgs_fmt' },
       -- Conform can also run multiple formatters sequentially
       python = { 'black' },

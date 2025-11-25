@@ -16,8 +16,8 @@ return {
   vim.keymap.set({ 'n', 'v' }, '<leader>tz', ':Themery<CR>', {}),
   -- git plugins keymaps
   vim.keymap.set({ 'n', 'v' }, '<leader>gn', ':Neogit<CR>', {}),
-  vim.keymap.set({ 'n', 'v' }, '<leader>gdo', ':DiffviewOpen<CR>', {}),
-  vim.keymap.set({ 'n', 'v' }, '<leader>gdc', ':DiffviewClose<CR>', {}),
+  vim.keymap.set({ 'n', 'v' }, '<leader>go', ':DiffviewOpen<CR>', {}),
+  vim.keymap.set({ 'n', 'v' }, '<leader>gc', ':DiffviewClose<CR>', {}),
   -- open lazy vim plugins manager
   vim.keymap.set({ 'n', 'v' }, '<leader>ll', ':Lazy<CR>', {}),
   -- leap plugins keymaps

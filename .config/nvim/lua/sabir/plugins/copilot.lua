@@ -1,7 +1,7 @@
 return {
   {
     'zbirenbaum/copilot.lua',
-    event = 'VeryLazy',
+    lazy = true,
     config = function()
       require('copilot').setup {
         suggestion = {
