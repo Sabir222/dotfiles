@@ -1,0 +1,11 @@
+# Ignore VS Code completely
+.config/Code/
+
+# Ignore Brave Browser completely
+.config/BraveSoftware/
+
+# General ignores
+.cache/
+*.log
+*~
+.DS_Store
