@@ -10,7 +10,7 @@ font-family = "CaskaydiaCove Nerd Font"
 # font-family = "Cascadia Code"
 # font-family = "SF Mono"
 
-font-size = 14
+font-size = 16
 
 # Font features for enhanced readability
 font-feature = "liga"  # Enable ligatures
@@ -21,7 +21,7 @@ font-feature = "ss01"  # Stylistic set 1 (varies by font)
 # THEME AND COLORS
 # =============================================================================
 
-theme = "tokyonight_night"
+# theme = "tokyonight_night"
 
 background = #101010
 foreground = #7E99A3
@@ -53,7 +53,7 @@ palette = 15=#c0caf5
 window-padding-x = 4
 window-padding-y = 4
 window-padding-balance = true
-window-decoration = true
+window-decoration = none
 window-title-font-family = "SF Pro Display"
 
 background-opacity = 1

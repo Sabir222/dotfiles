@@ -28,3 +28,6 @@ history = 10000
 bindings = [
     { key = "Space", mods = "Control", action = "ToggleViMode" },
 ]
+
+[mouse]
+hide_when_typing = true

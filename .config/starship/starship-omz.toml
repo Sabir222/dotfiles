@@ -4,7 +4,8 @@ format = """
 
 #right_format = """$time$status$shell"""
 
-right_format = """$nodejs$python$rust$golang$java$lua$ruby$php$docker_context$kubernetes$aws$gcloud$azure$cmd_duration$git_status$git_state$git_metrics$status$shell$localip"""
+right_format = """$nodejs$python$rust$golang$java$lua$ruby$php$docker_context$kubernetes$aws$gcloud$azure$cmd_duration$git_status$git_state$git_metrics$status$shell"""
+#right_format = """$nodejs$python$rust$golang$java$lua$ruby$php$docker_context$kubernetes$aws$gcloud$azure$cmd_duration$git_status$git_state$git_metrics$status$shell$localip"""
 add_newline = true
 [localip]
 ssh_only = false
