@@ -6,6 +6,13 @@ return {
     require('themery').setup {
       -- add the config here
       themes = {
+        'kanagawa-paper',
+        'kanagawa-paper-ink',
+        'kanagawa-paper-canvas',
+        'rasmus',
+        'ashen',
+        'darcula-dark',
+        'rusty',
         'darcubox',
         'gruvbuddy',
         'kanagawa',

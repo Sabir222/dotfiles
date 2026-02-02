@@ -171,6 +171,11 @@ format = "[$symbol($version )]($style)"
 symbol = "🐘 "
 style = "#c4a7e7"        # Rose Pine iris
 
+[zig]
+format = "[$symbol($version )]($style)"
+symbol = " "
+style = "#ebbcba"        # Rose Pine rose
+
 [docker_context]
 format = "[$symbol$context]($style) "
 symbol = "🐳  "

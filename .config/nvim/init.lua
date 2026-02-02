@@ -46,7 +46,8 @@ require('lazy').setup({
     },
   },
 })
-vim.cmd.colorscheme 'gruvbox-material'
+--vim.cmd.colorscheme 'gruvbox-material'
+vim.cmd.colorscheme 'kanagawa-paper-ink'
 
 local set = vim.opt_local
 

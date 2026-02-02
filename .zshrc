@@ -90,8 +90,7 @@ alias monkeytype="toipe"
 
 # Vim/Neovim Aliases
 alias vim='NVIM_APPNAME=nvim nvim'
-alias cvim='NVIM_APPNAME=nvim-chad nvim'
-alias avim='NVIM_APPNAME=nvim-astro nvim'
+alias tvim='NVIM_APPNAME=nvim-test nvim'
 alias vimconf="cd ~/.config/nvim/ && nvim ."
 alias zshconf="nvim ~/.zshrc"
 

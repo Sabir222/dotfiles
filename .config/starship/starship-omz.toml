@@ -159,6 +159,11 @@ format = "[$symbol($version )]($style)"
 symbol = "☕ "
 style = "#eb6f92"        # Rose Pine love
 
+[zig]
+format = "[$symbol($version )]($style)"
+symbol = " "
+style = "#ebbcba"        # Rose Pine rose
+
 [lua]
 format = "[$symbol($version )]($style)"
 symbol = "🌙  "
