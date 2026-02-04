@@ -46,6 +46,9 @@ source "$ZSH/oh-my-zsh.sh"
 # ------------------------------------------------------------------------------
 
 # Add user-specific bin directories to PATH
+export PATH=$PATH:/opt/altera_lite/25.1std/quartus/bin
+export PATH=$PATH:/opt/altera_lite/25.1std/modelsim_ase/bin
+
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/scripts:$PATH"
 
@@ -162,3 +165,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(atuin init zsh)"
 export DOCKER_BUILDKIT=0
+
