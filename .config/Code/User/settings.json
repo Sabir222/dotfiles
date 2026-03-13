@@ -4,34 +4,34 @@
   "vim.handleKeys": {
     "<C-d>": true,
     "<C-s>": false,
-    "<C-z>": false
+    "<C-z>": false,
   },
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["leader", "space"],
-      "commands": ["workbench.action.quickOpen"]
+      "commands": ["workbench.action.quickOpen"],
     },
     {
       "before": ["leader", "f"],
-      "commands": ["workbench.action.files.newUntitledFile"]
+      "commands": ["workbench.action.files.newUntitledFile"],
     },
     {
       "before": ["leader", "w"],
-      "commands": ["workbench.action.files.save"]
-    }
+      "commands": ["workbench.action.files.save"],
+    },
   ],
   "vim.useSystemClipboard": true,
   // other settings
   "editor.formatOnSave": true,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "go.toolsManagement.autoUpdate": true,
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.minimap.enabled": false,
   "workbench.activityBar.location": "hidden",
@@ -44,12 +44,12 @@
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "right",
+  "extensions.ignoreRecommendations": true,
+  "window.restoreWindows": "none",
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
-    "scminput": false
+    "scminput": false,
   },
-  "extensions.ignoreRecommendations": true,
-  "window.restoreWindows": "none"
 }

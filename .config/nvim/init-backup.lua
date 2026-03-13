@@ -821,7 +821,7 @@ require('lazy').setup({
         'prettier',
         'gofumpt',
         'goimports',
-
+        'eslint',
         'sqlfmt',
         'yamlfmt',
         'clang-format',
