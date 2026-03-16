@@ -2,6 +2,7 @@
 # Oh My Zsh Configuration
 # ------------------------------------------------------------------------------
 
+export EDITOR='nvim'
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship-omz.toml"

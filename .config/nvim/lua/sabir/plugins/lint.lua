@@ -10,10 +10,10 @@ return {
 
     lint.linters_by_ft = {
       markdown = { 'markdownlint' },
-      typescript = { 'eslint' },
-      javascript = { 'eslint' },
-      typescriptreact = { 'eslint' },
-      javascriptreact = { 'eslint' },
+      --typescript = { 'eslint' },
+      --javascript = { 'eslint' },
+      --typescriptreact = { 'eslint' },
+      --javascriptreact = { 'eslint' },
       go = { 'golangcilint' },
     }
 
