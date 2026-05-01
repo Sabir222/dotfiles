@@ -86,12 +86,13 @@ alias gsync='git fetch upstream && git checkout main && git merge upstream/main 
 alias packages='vim ~/dotfiles/nixos/users/sabir.nix'
 alias vi='vim'
 alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'
+alias files='yazi'
 alias show="bat"
 alias dotfiles="cd ~/dotfiles/"
 alias weather="curl wttr.in/essaouira"
 alias ai='aichat'
 alias monkeytype="toipe"
-
+alias disk="dua i"
 # Vim/Neovim Aliases
 alias vim='NVIM_APPNAME=nvim nvim'
 alias tvim='NVIM_APPNAME=nvim-test nvim'
