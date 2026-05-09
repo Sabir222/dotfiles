@@ -1,170 +1,116 @@
-# ------------------------------------------------------------------------------
-# Oh My Zsh Configuration
-# ------------------------------------------------------------------------------
-
-export EDITOR='nvim'
-# Path to your oh-my-zsh installation.
+# ── Oh My Zsh ─────────────────────────────────────────────────────────────────
 export ZSH="$HOME/.oh-my-zsh"
-export STARSHIP_CONFIG="$HOME/.config/starship/starship-omz.toml"
-eval "$(starship init zsh)"
-# Theme
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="awesomepanda"
-# ZSH_THEME="sabir" # Alternative theme
-#ZSH_THEME="half-life" # Alternative theme
-ZSH_THEME="norm" # Alternative theme
-#ZSH_THEME="robbyrussell" # Alternative theme
+ZSH_THEME="norm"
 
-
-# Autosuggestion color
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#B6B09F"
-
-# Oh My Zsh Update Settings
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-zstyle ':omz:update' frequency 13   # check for updates every 13 days
-
-# ------------------------------------------------------------------------------
-# Plugins
-# ------------------------------------------------------------------------------
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
     zsh-autosuggestions
-    # zsh-syntax-highlighting # Currently commented out
     sudo
     web-search
     z
 )
 
-# ------------------------------------------------------------------------------
-# Source Oh My Zsh
-# ------------------------------------------------------------------------------
-# This line must be at the end of Oh My Zsh settings and plugins
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#B6B09F"
+zstyle ':omz:update' mode reminder
+zstyle ':omz:update' frequency 13
+
 source "$ZSH/oh-my-zsh.sh"
 
-# ------------------------------------------------------------------------------
-# Environment Variables & PATH
-# ------------------------------------------------------------------------------
+# ── Prompt ────────────────────────────────────────────────────────────────────
+#export STARSHIP_CONFIG="$HOME/.config/starship/starship-omz.toml"
+#eval "$(starship init zsh)"
 
-# Add user-specific bin directories to PATH
-export PATH=$PATH:/opt/altera_lite/25.1std/quartus/bin
-export PATH=$PATH:/opt/altera_lite/25.1std/modelsim_ase/bin
+# ── Editor ────────────────────────────────────────────────────────────────────
+export EDITOR='nvim'
 
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/scripts:$PATH"
+# ── PATH ──────────────────────────────────────────────────────────────────────
+export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 
 # Go
 export PATH="/usr/local/go/bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
 
-# Node.js (generic and nvm)
+# Node / pnpm / bun
 export PATH="/opt/nodejs/bin:$PATH"
-export NVM_DIR="$HOME/.nvm"
-
-# pnpm
-export PNPM_HOME="/home/sabir/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-export PATH="$HOME/.pnpm-global/bin:$PATH" # For globally installed pnpm packages
-
-# JetBrains IDEs & other tools
-export PATH="/home/sabir/GoLand-2024.1.2/bin:$PATH"
-export PATH="/opt/datagrip/bin:$PATH"
-export PATH="$HOME/idea-IU-243.22562.145/bin:$PATH"
-export PATH="$HOME/zig-linux-x86_64-0.13.0:$PATH" # Zig compiler
-
-# Git global config
-export GIT_CONFIG_GLOBAL="$HOME/.config/git/config"
-#ruby
-export PATH="$HOME/bin:/home/sabir/.local/share/gem/ruby/bin:$PATH"
-# ------------------------------------------------------------------------------
-# Aliases
-# ------------------------------------------------------------------------------
-alias ziglings='find exercises -name "*zig" | entr -c zig build'
-alias start-db="docker start booklab_redis_db booklab-db"
-alias lt='lsd --tree --all --icon always --ignore-glob ".git|node_modules"'
-alias gsync='git fetch upstream && git checkout main && git merge upstream/main && git push origin main'
-alias packages='vim ~/dotfiles/nixos/users/sabir.nix'
-alias vi='vim'
-alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'
-alias files='yazi'
-alias show="bat"
-alias dotfiles="cd ~/dotfiles/"
-alias weather="curl wttr.in/essaouira"
-alias ai='aichat'
-alias monkeytype="toipe"
-alias disk="dua i"
-# Vim/Neovim Aliases
-alias vim='NVIM_APPNAME=nvim nvim'
-alias tvim='NVIM_APPNAME=nvim-test nvim'
-alias vimconf="cd ~/.config/nvim/ && nvim ."
-alias zshconf="nvim ~/.zshrc"
-
-# Project specific
-alias goals="show ~/Projects/goals.md"
-
-#tmuxinator
-alias txs='tmuxinator start'
-alias txo='tmuxinator open'
-alias txn='tmuxinator new'
-alias txl='tmuxinator list'
-alias txc='tmuxinator stop'
-# ------------------------------------------------------------------------------
-# Keybindings
-# ------------------------------------------------------------------------------
-
-# Bind Ctrl+L to accept autosuggestions (Oh My Zsh default is usually End or Right Arrow)
-# Note: The original config had '^p', if you intended Ctrl+L, it should be '^l' (lowercase L)
-# If you meant Ctrl+P, then '^p' is correct. I'm keeping original '^p'.
-bindkey '^p' autosuggest-accept
-
-# Tmux sessionizer
-bindkey -s '^f' "tmux-sessionizer\n"
-
-# ------------------------------------------------------------------------------
-# Shell Integrations & Tooling
-# ------------------------------------------------------------------------------
-
-# Rust - Cargo
-[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-export PATH="$HOME/.cargo/bin:$PATH"
-# The Fuck - command line spell checker
-eval $(thefuck --alias)
-eval $(thefuck --alias fk) # Alias 'fk' for 'thefuck'
-
-# NVM (Node Version Manager)
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# pnpm (PATH setup is done in the Environment Variables section)
-# The pnpm script block for PATH modification is redundant if paths are set manually above.
-# Original pnpm block for reference, can be removed if manual PATH additions are preferred:
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-
-# ------------------------------------------------------------------------------
-# User Customizations (End of File)
-# ------------------------------------------------------------------------------
-# Add any other personal configurations below this line.
-
-# pnpm
 export PNPM_HOME="/home/sabir/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
-
-# bun completions
-[ -s "/home/sabir/.bun/_bun" ] && source "/home/sabir/.bun/_bun"
-
-# bun
+export PATH="$HOME/.pnpm-global/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-. "$HOME/.atuin/bin/env"
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
 
-eval "$(atuin init zsh)"
+# Zig
+export PATH="$HOME/zig-linux-x86_64-0.13.0:$PATH"
+
+# Ruby
+export PATH="$HOME/bin:/home/sabir/.local/share/gem/ruby/bin:$PATH"
+
+# JetBrains / IDEs
+export PATH="/home/sabir/GoLand-2024.1.2/bin:$PATH"
+export PATH="/opt/datagrip/bin:$PATH"
+export PATH="$HOME/idea-IU-243.22562.145/bin:$PATH"
+
+# Quartus / ModelSim
+export PATH="/opt/altera_lite/25.1std/quartus/bin:$PATH"
+export PATH="/opt/altera_lite/25.1std/modelsim_ase/bin:$PATH"
+
+# Git
+export GIT_CONFIG_GLOBAL="$HOME/.config/git/config"
+
+# Docker
 export DOCKER_BUILDKIT=0
 
+# ── NVM ───────────────────────────────────────────────────────────────────────
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# ── Integrations ──────────────────────────────────────────────────────────────
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+[ -s "/home/sabir/.bun/_bun" ] && source "/home/sabir/.bun/_bun"
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+eval "$(thefuck --alias)"
+eval "$(thefuck --alias fk)"
+
+# ── Aliases ───────────────────────────────────────────────────────────────────
+# Neovim
+alias vim='NVIM_APPNAME=nvim nvim'
+alias tvim='NVIM_APPNAME=nvim-test nvim'
+alias vi='vim'
+alias vimconf="cd ~/.config/nvim/ && nvim ."
+alias zshconf="nvim ~/.zshrc"
+
+# Navigation & files
+alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'
+alias lt='lsd --tree --all --icon always --ignore-glob ".git|node_modules"'
+alias files='yazi'
+alias show="bat"
+alias dotfiles="cd ~/dotfiles/"
+
+# tmuxinator
+alias txs='tmuxinator start'
+alias txo='tmuxinator open'
+alias txn='tmuxinator new'
+alias txl='tmuxinator list'
+alias txc='tmuxinator stop'
+
+# Git
+alias gsync='git fetch upstream && git checkout main && git merge upstream/main && git push origin main'
+
+# Tools
+alias ai='aichat'
+alias disk="dua i"
+alias monkeytype="toipe"
+alias weather="curl wttr.in/essaouira"
+alias packages='vim ~/dotfiles/nixos/users/sabir.nix'
+alias goals="show ~/Projects/goals.md"
+alias start-db="docker start booklab_redis_db booklab-db"
+alias ziglings='find exercises -name "*zig" | entr -c zig build'
+
+# ── Keybindings ───────────────────────────────────────────────────────────────
+bindkey '^p' autosuggest-accept
+bindkey -s '^f' "tmux-sessionizer\n"

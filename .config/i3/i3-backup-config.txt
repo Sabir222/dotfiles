@@ -1,0 +1,215 @@
+# Set the mod key (Super key)
+set $mod Mod4
+
+
+exec wl-paste --watch cliphist store
+#monitors
+exec_always --no-startup-id xrandr --output DP-2 --primary --mode 1920x1080 --rate 60 --pos 0x0 --output HDMI-1 --mode 1920x1080 --rate 60 --pos 1920x0
+set $fm HDMI-1
+set $sm DP-2
+# Font for window titles and bar
+font pango:monospace 8
+
+# Define your programs (same as Hyprland)
+set $terminal alacritty
+set $fileManager dolphin
+set $menu rofi -show drun
+set $browser brave
+set $browserIncognito brave --incognito
+
+#################
+### AUTOSTART ###
+#################
+
+# Start gnome-keyring
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+
+# Start terminal on startup
+exec --no-startup-id $terminal
+
+# Start compositor for transparency/blur effects (similar to Hyprland's decoration)
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
+
+# Set wallpaper (using feh instead of swww)
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/5.png
+
+# Start kwalletd5
+exec --no-startup-id kwalletd5
+
+# Start idle management (install xautolock as alternative to hyperidle)
+exec --no-startup-id xautolock -time 10 -locker i3lock
+
+# Start i3bar
+#exec --no-startup-id i3bar
+
+#####################
+### LOOK AND FEEL ###
+#####################
+
+# Window borders (similar to Hyprland's border settings)
+default_border pixel 1
+default_floating_border pixel 1
+
+# Colors (matching your Hyprland theme)
+# class                 border  backgr. text    indicator child_border
+client.focused          #0B192C #0B192C #ffffff #0B192C  #0B192C
+client.focused_inactive #3c3c3c #1a1a1a #888888 #2c2c2c   #3c3c3c
+client.unfocused        #2c2c2c #0f0f0f #666666 #1a1a1a   #2c2c2c
+client.urgent           #1a1a1a #cc2936 #ffffff #cc2936   #cc2936
+client.placeholder      #0f0f0f #050505 #333333 #0a0a0a   #0f0f0f
+# Gaps (install i3-gaps for this to work)
+#gaps inner 5
+#gaps outer 1
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+
+###################
+### KEYBINDINGS ###
+###################
+
+# Terminal
+bindsym $mod+Return exec $terminal
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Exit i3
+bindsym $mod+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# File manager
+bindsym $mod+e exec $fileManager
+
+# Toggle floating
+bindsym $mod+Shift+v floating toggle
+
+# Application launcher
+bindsym $mod+d exec $menu
+
+# Browser
+bindsym $mod+b exec $browser
+bindsym $mod+i exec $browserIncognito
+
+# Wallpaper changer (equivalent to your swww command)
+bindsym $mod+w exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/$(ls ~/Pictures/wallpapers/ | shuf -n1)
+
+# Focus movement (vim-like keys)
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move windows
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Workspace switching
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+#
+
+workspace 1 output $sm
+workspace 2 output $sm
+workspace 3 output $fm
+workspace 4 output $fm
+workspace 5 output $fm
+workspace 6 output $fm
+workspace 7 output $fm
+workspace 8 output $fm
+workspace 9 output $fm
+# Move windows to workspaces
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Scratchpad (similar to Hyprland's special workspace)
+bindsym $mod+s scratchpad show
+bindsym $mod+Shift+s move scratchpad
+
+# Split orientation
+bindsym $mod+g split h
+bindsym $mod+v split v
+
+# Fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Layout switching
+bindsym $mod+t layout tabbed
+bindsym $mod+y layout stacking
+bindsym $mod+u layout toggle split
+
+# Restart i3
+bindsym $mod+Shift+r restart
+
+# Audio controls (using wpctl like in your Hyprland config)
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+# Brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -e4 -n2 set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -e4 -n2 set 5%-
+
+# Media controls (Spotify)
+bindsym XF86AudioPlay exec --no-startup-id playerctl -p spotify play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl -p spotify next
+bindsym XF86AudioPrev exec --no-startup-id playerctl -p spotify previous
+
+# Resize mode
+mode "resize" {
+    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym j resize grow height 5 px or 5 ppt
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym l resize grow width 5 px or 5 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Status bar with i3blocks
+bar {
+    status_command i3blocks
+    separator_symbol "::"
+    position top
+    font pango:monospace 8
+    height 18
+    colors {
+    statusline #504238
+    background #151515
+    separator #ffffff
+    
+    focused_workspace  #6b5940 #6b5940 #151515
+    active_workspace   #3a2f26 #3a2f26 #a0958a
+    inactive_workspace #191919 #191919 #504238
+    urgent_workspace   #85523d #85523d #151515
+    binding_mode       #5f5142 #5f5142 #151515
+}
+    }
+
+# Window rules
+for_window [class=".*"] border pixel 1
+
+# Floating windows
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="Pavucontrol"] floating enable
