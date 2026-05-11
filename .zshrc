@@ -77,6 +77,12 @@ eval "$(thefuck --alias)"
 eval "$(thefuck --alias fk)"
 
 # ── Aliases ───────────────────────────────────────────────────────────────────
+
+# system
+alias shutdown="systemctl poweroff"
+alias reboot="systemctl reboot"
+alias suspend="systemctl suspend"
+
 # Neovim
 alias vim='NVIM_APPNAME=nvim nvim'
 alias tvim='NVIM_APPNAME=nvim-test nvim'
@@ -110,6 +116,11 @@ alias packages='vim ~/dotfiles/nixos/users/sabir.nix'
 alias goals="show ~/Projects/goals.md"
 alias start-db="docker start booklab_redis_db booklab-db"
 alias ziglings='find exercises -name "*zig" | entr -c zig build'
+
+#bitwardern
+bwunlock() {
+  export BW_SESSION=$(bw unlock --raw)
+}
 
 # ── Keybindings ───────────────────────────────────────────────────────────────
 bindkey '^p' autosuggest-accept

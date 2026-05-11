@@ -88,8 +88,8 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id kwalletd5
 
 # Terminal on startup
-exec --no-startup-id $terminal
-
+#exec --no-startup-id $terminal
+exec_always sh -c "sleep 0.2 && swaymsg 'workspace number 1; exec alacritty'"
 
 # ============================================================
 #  [SWAY ONLY] AUTOSTART
