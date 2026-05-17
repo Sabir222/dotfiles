@@ -85,9 +85,9 @@ alias suspend="systemctl suspend"
 
 # Neovim
 alias vim='NVIM_APPNAME=nvim nvim'
-alias tvim='NVIM_APPNAME=nvim-test nvim'
-alias vi='vim'
+alias vi='NVIM_APPNAME=vi nvim'
 alias vimconf="cd ~/.config/nvim/ && nvim ."
+alias viconf="cd ~/.config/vi/ && nvim ."
 alias zshconf="nvim ~/.zshrc"
 
 # Navigation & files
@@ -122,6 +122,10 @@ bwunlock() {
   export BW_SESSION=$(bw unlock --raw)
 }
 
+#yt-dlp
+mp3 () {
+    yt-dlp -x --audio-format mp3 "$1"
+}
 # ── Keybindings ───────────────────────────────────────────────────────────────
 bindkey '^p' autosuggest-accept
 bindkey -s '^f' "tmux-sessionizer\n"
