@@ -1,10 +1,22 @@
 return {
   'tris203/precognition.nvim',
-  event = 'VeryLazy',
+  --event = "VeryLazy",
   opts = {
     -- startVisible = true,
+    -- debounceMs = 0,
     -- showBlankVirtLine = true,
+    -- highlightFullVirtLine = false,
     -- highlightColor = { link = "Comment" },
+    -- targetedMotionHighlightColor = { link = "PrecognitionTargetedMotionDefault" },
+    -- textObjectHighlightColors = {
+    --     { link = "DiffText" },
+    --     { link = "DiffChange" },
+    --     { link = "Visual" },
+    -- },
+    targetedMotionHints = {
+      enabled = false,
+      prio = 0,
+    },
     -- hints = {
     --      Caret = { text = "^", prio = 2 },
     --      Dollar = { text = "$", prio = 1 },
