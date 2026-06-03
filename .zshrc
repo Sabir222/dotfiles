@@ -77,7 +77,11 @@ eval "$(thefuck --alias)"
 eval "$(thefuck --alias fk)"
 
 # ── Aliases ───────────────────────────────────────────────────────────────────
+#VPN
 
+alias vpnon="sudo wg-quick up sabir-pc"
+alias vpnoff="sudo wg-quick down sabir-pc"
+alias vpn-dashboard='xdg-open http://10.8.0.1:51821 >/dev/null 2>&1 &'
 # system
 alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"

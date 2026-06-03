@@ -23,7 +23,7 @@ matching=contains
 
 
 # Cache settings
-cache_file=~/.cache/wofi-drun
+cache_file=/home/sabir/.cache/wofi-drun
 term=alacritty
 
 # Key bindings (optional)
