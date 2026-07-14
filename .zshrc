@@ -21,6 +21,7 @@ source "$ZSH/oh-my-zsh.sh"
 
 # ── Editor ────────────────────────────────────────────────────────────────────
 export EDITOR='nvim'
+export VISUAL='nvim'
 
 # ── PATH ──────────────────────────────────────────────────────────────────────
 export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
@@ -78,7 +79,7 @@ eval "$(thefuck --alias fk)"
 
 # ── Aliases ───────────────────────────────────────────────────────────────────
 #VPN
-
+alias grep='rg --color=auto'
 alias vpnon="sudo wg-quick up sabir-pc"
 alias vpnoff="sudo wg-quick down sabir-pc"
 alias vpn-dashboard='xdg-open http://10.8.0.1:51821 >/dev/null 2>&1 &'
@@ -133,3 +134,18 @@ mp3 () {
 # ── Keybindings ───────────────────────────────────────────────────────────────
 bindkey '^p' autosuggest-accept
 bindkey -s '^f' "tmux-sessionizer\n"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/sabir/.local/bin:$PATH"
+export PATH="$HOME/.local/share/pnpm/bin:$PATH"
+
+# >>> Codex installer >>>
+export PATH="/home/sabir/.local/bin:$PATH"
+# <<< Codex installer <<<
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<
