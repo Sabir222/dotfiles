@@ -1,0 +1,87 @@
+# Ghostty matched to Alacritty
+# Source of truth: ~/.config/alacritty/alacritty.toml (+ Alacritty defaults for unset keys)
+
+# =============================================================================
+# Font (icons come from this Nerd Font — same as Alacritty)
+# =============================================================================
+
+font-family = "CaskaydiaCove Nerd Font"
+font-size = 16
+
+# =============================================================================
+# Colors — primary from your Alacritty config; 16-color palette = Alacritty defaults
+# =============================================================================
+
+background = #171717
+foreground = #7F8CAA
+
+# Cursor: solid block like Vim (not a thin bar)
+cursor-color = #7F8CAA
+cursor-text = #171717
+cursor-style = block
+cursor-style-blink = false
+
+# Selection: Alacritty default is reverse of cell colors
+selection-foreground = #171717
+selection-background = #7F8CAA
+
+# normal (0–7)
+palette = 0=#181818
+palette = 1=#ac4242
+palette = 2=#90a959
+palette = 3=#f4bf75
+palette = 4=#6a9fb5
+palette = 5=#aa759f
+palette = 6=#75b5aa
+palette = 7=#d8d8d8
+
+# bright (8–15)
+palette = 8=#6b6b6b
+palette = 9=#c55555
+palette = 10=#aac474
+palette = 11=#feca88
+palette = 12=#82b8c8
+palette = 13=#c28cb8
+palette = 14=#93d3c3
+palette = 15=#f8f8f8
+
+# Alacritty default: draw_bold_text_with_bright_colors = false
+# (Ghostty: leave bold-color unset / default — not "bright")
+
+# =============================================================================
+# Window / appearance
+# =============================================================================
+
+background-opacity = 1
+window-padding-x = 2
+window-padding-y = 1
+window-padding-balance = false
+
+# Match Alacritty-on-Sway: no client-side titlebar chrome
+window-decoration = none
+gtk-titlebar = false
+
+# =============================================================================
+# Behavior
+# =============================================================================
+
+mouse-hide-while-typing = true
+
+# Alacritty history = 10000 lines; Ghostty uses bytes (approx for ~10k lines)
+scrollback-limit = 2000000
+
+# Match your Alacritty [env] term
+term = xterm-256color
+
+# Linux primary-selection style (Alacritty copies selection to PRIMARY)
+copy-on-select = true
+clipboard-read = allow
+clipboard-write = allow
+
+shell-integration = zsh
+# no-cursor: keep block cursor; "cursor" would force a thin bar at the prompt
+shell-integration-features = no-cursor,sudo,title
+working-directory = inherit
+
+confirm-close-surface = false
+resize-overlay = never

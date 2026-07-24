@@ -102,7 +102,6 @@ OMB_USE_SUDO=true
 #      plugins+=(tmux-autoattach)
 #  fi
 
-
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -137,7 +136,6 @@ alias vim='nvim'
 alias bashconf="nvim ~/.bashrc"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-
 
 # Added by Antigravity CLI installer
 export PATH="/home/sabir/.local/bin:$PATH"
