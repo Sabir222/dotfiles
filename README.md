@@ -1,225 +1,288 @@
 # Sabir's Dotfiles
 
-Personal Linux dotfiles managed with **GNU Stow**, built on **NixOS** with **Hyprland** as the compositor.
+Personal Linux configuration, managed with **[GNU Stow](https://www.gnu.org/software/stow/)**.  
+One repo, many machines — shell, editor, window managers, and a carefully tuned terminal stack.
 
-## Quick Start
+```text
+~/dotfiles  ──stow──►  ~/.config, ~/.zshrc, ~/.tmux.conf, …
+```
+
+**Repo:** [github.com/Sabir222/dotfiles](https://github.com/Sabir222/dotfiles)
+
+---
+
+## Quick start
 
 ```bash
-# 1. Clone to $HOME
-git clone https://github.com/Sabir222/dotfiles ~/dotfiles
+# 1. Clone into $HOME
+git clone git@github.com:Sabir222/dotfiles.git ~/dotfiles
 
 # 2. Symlink everything with Stow
 cd ~/dotfiles && stow .
 
-# 3. For NixOS: symlink the flake to /etc/nixos
-sudo rm -r /etc/nixos
+# 3. (Optional) NixOS system config
+sudo rm -rf /etc/nixos
 sudo ln -s ~/dotfiles/nixos /etc/nixos
-
-# 4. Rebuild NixOS
 sudo nixos-rebuild switch --flake /etc/nixos#sabirlinux
+```
+
+Stow links package contents into `$HOME`. Edit files under `~/dotfiles` — those are the source of truth.
+
+---
+
+## Stack
+
+| Layer | Choice |
+|---|---|
+| **OS** | Fedora / NixOS (flake under `nixos/`) |
+| **Compositor (active)** | **Sway** (Wayland) |
+| **Also present** | Hyprland, i3, bspwm, xmonad |
+| **Terminal** | **Ghostty** (default) · Alacritty · Kitty · WezTerm |
+| **Font** | **CaskaydiaCove Nerd Font** (everywhere that matters) |
+| **Shell** | Zsh + Oh My Zsh (`norm` theme) + Atuin |
+| **Prompt extras** | Starship configs (Rose Pine palette) available |
+| **Multiplexer** | Tmux + TPM · tmuxinator |
+| **Editor** | Neovim (kickstart + lazy.nvim) · Kanagawa Paper Ink |
+| **Launcher** | Wofi (Sway) · Rofi |
+| **Bar** | i3blocks (Sway) · Waybar / polybar / xmobar configs |
+| **Browser** | Brave |
+| **File manager** | Dolphin |
+| **Notifications** | Mako |
+| **Git** | Delta pager · GPG signing · `gh:` / `sk:` URL shortcuts |
+
+---
+
+## Ghostty
+
+**Default terminal** on Sway (`$terminal` → `ghostty`, Super+Return).
+
+Config path (stowed):
+
+```text
+.config/ghostty/config.ghostty
+  → ~/.config/ghostty/config.ghostty
+```
+
+Ghostty 1.3+ loads **`config.ghostty`** (not the older bare `config` name).
+
+### Font — CaskaydiaCove Nerd Font
+
+The terminal is built around **[CaskaydiaCove Nerd Font](https://www.nerdfonts.com/font-downloads)** (Cascadia Code + Nerd Font glyphs):
+
+| Setting | Value |
+|---|---|
+| **Family** | `CaskaydiaCove Nerd Font` |
+| **Size** | `16` |
+
+It’s the same family as Alacritty, so shell icons, Starship/Oh My Zsh glyphs, and `eza`/`ls` symbols stay consistent when switching emulators. This font is intentional and non-negotiable for this setup — the ligatures and icon coverage are why it stuck.
+
+Install on Fedora:
+
+```bash
+# Example: get a Nerd Fonts package or install the TTF/OTF into ~/.local/share/fonts
+fc-cache -fv
+ghostty +list-fonts | grep -i caskaydia
+```
+
+### Look & feel
+
+Colours and metrics are aligned with the Alacritty config:
+
+| | |
+|---|---|
+| Background | `#171717` |
+| Foreground | `#7F8CAA` |
+| Padding | `2` × `1` |
+| Cursor | Solid **block** (Vim-style), no blink |
+| Window | No client-side decorations (clean under Sway) |
+| `$TERM` | `xterm-256color` |
+
+Shell integration keeps **sudo** / **title** helpers but uses `no-cursor` so the prompt doesn’t force a thin bar cursor.
+
+### Sway notes
+
+- Super+Return and session autostart use Ghostty via `set $terminal ghostty`.
+- On Sway, `/etc/sway/config.d/*` (Fedora `sway-systemd`) is included so D-Bus-activated apps get `WAYLAND_DISPLAY` — required for Ghostty from Wofi.
+
+Reload after config edits:
+
+```bash
+# running instance
+pkill -SIGUSR2 ghostty
+# or open a new window
 ```
 
 ---
 
-## Stack Overview
+## Sway
 
-| Category | Choice |
+Active Wayland session. Config: `.config/sway/config`.
+
+| Key | Action |
 |---|---|
-| **OS** | NixOS 25.05 (flake-based) |
-| **WM/Compositor** | Hyprland |
-| **Shell** | Zsh + Oh My Zsh |
-| **Status Bar** | Waybar |
-| **Launcher** | Wofi (+ Rofi) |
-| **Terminal** | Alacritty (primary) / Kitty / Ghostty / Wezterm |
-| **Multiplexer** | Tmux + TPM |
-| **Editor** | Neovim (kickstart-based, lazy.nvim) |
-| **Font** | CaskaydiaCove Nerd Font / JetBrainsMono Nerd Font |
-| **Theme** | Rose Pine |
+| `Super+Return` | Terminal (**Ghostty**) |
+| `Super+Q` | Kill focused window |
+| `Super+E` | File manager (Dolphin) |
+| `Super+D` | App launcher (Wofi) |
+| `Super+B` / `Super+I` | Brave / Brave incognito |
+| `Super+W` | Random wallpaper |
+| `Super+M` | Exit Sway (confirm) |
+| `Super+{H,J,K,L}` | Focus (vim) |
+| `Super+Shift+{H,J,K,L}` | Move window |
+| `Super+{1–0}` | Workspaces 1–10 |
+| `Super+Shift+{1–0}` | Move to workspace |
+| `Super+R` | Resize mode |
+| `Super+F` | Fullscreen |
+
+Also in this config: dual-monitor layout, mako, swayidle/swaylock, cliphist, i3blocks bar.
 
 ---
 
 ## Neovim
 
-Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) with **lazy.nvim** package manager.
+Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) with **lazy.nvim**.  
+Lives in `.config/nvim/` · plugins under `lua/sabir/plugins/`.
 
-```bash
-# Dependencies for Neovim
-# (already on NixOS, or install manually:)
-sudo nix-env -iA nixos.neovim nixos.ripgrep nixos.fd nixos.lazygit
-```
+**Theme:** `kanagawa-paper-ink`
 
-The config lives in `~/.config/nvim/` with plugins in `lua/sabir/plugins/`. Active theme: **Kanagawa Paper**.
-
-### Key plugins
-- LSP, Treesitter, nvim-cmp (auto-completion)
-- Neo-tree / Oil / Yazi (file browsing)
-- Copilot / Avante (AI)
-- Gitsigns / Lazygit / Diffview (Git)
-- Telescope (fuzzy finding)
-- Harpoon (quick navigation)
-- Lualine (status line)
+Notable pieces: LSP, Treesitter, nvim-cmp, Telescope, Harpoon, Neo-tree / Oil / Yazi, Gitsigns, Lazygit, Diffview, Lualine, Copilot / Avante.
 
 ---
 
 ## Tmux
 
-Uses **TPM** (Tmux Plugin Manager). Prefix: `Ctrl+a`.
+Prefix: **`Ctrl+a`** · TPM plugins.
 
 ```bash
-# Install TPM
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# Install plugins (inside tmux)
-# Press: Ctrl+a + I
+# inside tmux: Ctrl+a then I
 ```
 
-Key features:
-- Vim-style navigation (`h/j/k/l` to switch panes)
-- Git branch & status in status line
-- `Alt+0-9` to switch windows
-- `Ctrl+f` to launch tmux-sessionizer
-- `Ctrl+b` to toggle status bar
+- Vim-style pane focus (`h/j/k/l`)
+- Git-aware status line
+- `Ctrl+f` → **tmux-sessionizer** (fuzzy project sessions)
+- Layouts/projects via **tmuxinator**
 
 ---
 
 ## Shell (Zsh)
 
-### Requirements
+Oh My Zsh theme: **`norm`**. Custom theme file in-repo: `sabir.zsh-theme` (optional install into `~/.oh-my-zsh/custom/themes/`).
 
-```bash
-# Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+### Handy tools & aliases
 
-# Custom theme
-cp ~/dotfiles/sabir.zsh-theme ~/.oh-my-zsh/custom/themes/
-
-# Plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-```
-
-### Aliases & Tools
-
-| Tool | Aliases |
+| Tool | Role |
 |---|---|
-| **eza** | `ls` (with icons, git status) |
+| **eza** | `ls` with icons + git |
 | **bat** | `show` |
 | **yazi** | `files` |
-| **lazygit** | `lg` (if bound) |
-| **tmuxinator** | `txs`, `txo`, `txn`, `txl`, `txc` |
+| **atuin** | Smarter history (`Ctrl+r`) |
+| **zoxide** | Smart `cd` (`z`) |
+| **thefuck** | `fuck` / `fk` |
+| **dua** | `disk` |
+| **tmuxinator** | `txs`, `txo`, `txn`, … |
 | **aichat** | `ai` |
-| **dua** | `disk` (disk usage analyzer) |
-| **toipe** | `monkeytype` (typing test) |
-| **atuin** | Shell history search (Ctrl+r) |
-| **thefuck** | `fuck` / `fk` (correct last command) |
-| **zoxide** | `z` (smart cd, via omz plugin) |
 
-### PATH includes
-- `$HOME/.local/bin`, `$HOME/.local/scripts`, `$HOME/.cargo/bin`, `$HOME/go/bin`
-- nvm (Node.js), pnpm, bun
-- Zig, Go, Ruby gems
-- JetBrains IDEs, Quartus/ModelSim
-
----
-
-## Hyprland
-
-Active compositor. Configs in `~/.config/hypr/`.
-
-| File | Purpose |
-|---|---|
-| `hyprland.conf` | Keybinds, monitors, animations, input |
-| `hyprlock.conf` | Lock screen with clock, date, wallpaper |
-| `hypridle.conf` | Auto-lock after 5 min idle |
-| `hyprpaper.conf` | Wallpaper preload & set |
-
-### Keybinds (Super = Windows key)
-
-| Key | Action |
-|---|---|
-| `Super+Return` | Terminal (Alacritty) |
-| `Super+W` | Random wallpaper |
-| `Super+Q` | Kill active window |
-| `Super+M` | Exit Hyprland |
-| `Super+E` | File manager (Dolphin) |
-| `Super+D` | App launcher (Wofi) |
-| `Super+B` | Browser (Brave) |
-| `Super+V` | Toggle floating |
-| `Super+{1-0}` | Switch workspace |
-| `Super+Shift+{1-0}` | Move window to workspace |
-| `Super+{H,J,K,L}` | Focus left/down/up/right |
+`PATH` picks up `~/.local/bin`, `~/.local/scripts`, Cargo, Go, nvm/pnpm/bun, and more (see `.zshrc`).
 
 ---
 
 ## Git
 
-Global config in `~/.config/git/config` with:
-- **Delta** as diff pager
-- GPG commit signing (key: `C3B9D7943CC95559`)
-- `gh:` shorthand for `git@github.com:`
-- `sk:` shorthand for `git@github.com:Sabir222/`
+Global config: `.config/git/config`
 
-```bash
-# GPG key reminder
-# If you change PCs, update your public key on GitHub
-```
+- **Delta** as the diff pager
+- GPG commit signing
+- Shorthands: `gh:` → `git@github.com:`, `sk:` → `git@github.com:Sabir222/`
+
+If you rotate machines or regenerate a signing key, update the public key on GitHub.
 
 ---
 
 ## Scripts
 
-`~/.local/scripts/`:
-- **tmux-sessionizer** — Fuzzy-find projects in `~/Desktop/` and `~/Projects/`, create/attach tmux sessions
+`.local/scripts/`:
 
----
-
-## NixOS Modules
-
-| Module | Purpose |
+| Script | Purpose |
 |---|---|
-| `bootloader.nix` | systemd-boot, EFI |
-| `desktop.nix` | Hyprland, Cinnamon fallback, LightDM |
-| `fonts.nix` | Nerd Fonts (Fira Code, JetBrains Mono, Caskaydia Cove) |
-| `networking.nix` | NetworkManager |
-| `sound.nix` | PipeWire (ALSA, PulseAudio) |
-| `packages.nix` | System packages (Bibata cursors, Firefox) |
-| `zsh.nix` | Zsh as default shell |
-| `tempApps.nix` | JetBrains DataGrip |
-
-### User packages (from `users/sabir.nix`)
-bat, ripgrep, fd, fzf, eza, btop, tmux, git, neovim, waybar, ghostty, alacritty, wofi, spotify, brave, starship, stow, swww, zoxide, thefuck, clang, gcc, python3, go, rustc, cargo, nodejs_22, pnpm_9, and more.
-
----
-
-## Manual Steps After Setup
+| **tmux-sessionizer** | Fuzzy-find under `~/Desktop` / `~/Projects`, create or attach a tmux session |
 
 ```bash
-# 1. Tmux sessionizer permissions
 chmod +x ~/.local/scripts/tmux-sessionizer
-
-# 2. Install Lazygit
-# (via your package manager or NixOS)
-
-# 3. Install Rust toolchain
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# 4. Install eza (via cargo, or NixOS)
-# cargo install eza
-
-# 5. Install Atuin
-# bash <(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)
-
-# 6. Set up GPG key for commit signing
-gpg --full-generate-key
-git config --global user.signingkey YOUR_KEY
-git config --global commit.gpgSign true
-
-# 7. Tmux source
-tmux source ~/.tmux.conf
 ```
 
 ---
 
-## GPG Key Reminder
+## Hyprland & friends
 
-If you change PCs or generate a new GPG key, update your public GPG key on GitHub to keep commit signing working correctly.
+Hyprland configs remain under `.config/hypr/` (hyprland / hyprlock / hypridle / hyprpaper).  
+Other WM configs (i3, bspwm, xmonad, …) are kept for alternate sessions — Sway is the daily driver on this machine.
+
+---
+
+## NixOS
+
+Flake + modules under `nixos/`:
+
+| Module | Role |
+|---|---|
+| `bootloader.nix` | systemd-boot, EFI |
+| `desktop.nix` | Desktop session packages |
+| `fonts.nix` | Nerd Fonts (including **Caskaydia Cove**) |
+| `networking.nix` | NetworkManager |
+| `sound.nix` | PipeWire |
+| `packages.nix` | System packages |
+| `zsh.nix` | Default shell |
+| `tempApps.nix` | Extra apps |
+
+User package set lives in `nixos/users/`.
+
+---
+
+## Layout
+
+```text
+dotfiles/
+├── .config/
+│   ├── ghostty/config.ghostty    # primary terminal
+│   ├── alacritty/                # reference colours / fallback
+│   ├── sway/                     # active compositor
+│   ├── nvim/                     # editor
+│   ├── starship/                 # prompt themes
+│   ├── git/                      # global git + delta
+│   ├── hypr/ i3/ waybar/ wofi/ … # other desktop pieces
+│   └── …
+├── .local/scripts/               # tmux-sessionizer, etc.
+├── nixos/                        # flake + modules
+├── Pictures/                     # wallpapers / assets
+├── .zshrc · .tmux.conf · .wezterm.lua
+├── sabir.zsh-theme
+└── README.md
+```
+
+---
+
+## After install checklist
+
+```bash
+# Fonts (CaskaydiaCove Nerd Font must be installed for Ghostty icons)
+fc-list | grep -i CaskaydiaCove
+
+# Stow
+cd ~/dotfiles && stow .
+
+# TPM
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Scripts
+chmod +x ~/.local/scripts/*
+
+# Optional: Atuin, rustup, language toolchains — as needed for your host
+```
+
+---
+
+## License / credit
+
+Personal config — steal freely, expect sharp edges.  
+Thanks to the maintainers of Ghostty, Sway, Neovim kickstart, Nerd Fonts, and everyone whose configs were adapted along the way.

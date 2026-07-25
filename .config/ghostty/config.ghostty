@@ -6,7 +6,13 @@
 # =============================================================================
 
 font-family = "CaskaydiaCove Nerd Font"
-font-size = 16
+font-size = 17
+
+# CaskaydiaCove lacks most ballot/heavy-check dingbats; Alacritty falls back to
+# DejaVu Sans (handwritten ✓/✗). Ghostty prefers mono fallbacks → plain x-like
+# marks. Force the same DejaVu glyphs Alacritty uses for U+2713–U+2718:
+#   ✓ ✔ ✕ ✖ ✗ ✘
+font-codepoint-map = U+2713-U+2718=DejaVu Sans
 
 # =============================================================================
 # Colors — primary from your Alacritty config; 16-color palette = Alacritty defaults
