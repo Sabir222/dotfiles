@@ -1,0 +1,77 @@
+* {
+  font-family: monospace;
+  font-size: 8px;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  border-radius: 0;
+}
+
+#waybar {
+  background: #151515;
+  color: #9b8d7f;
+}
+
+#workspaces {
+  background: transparent;
+}
+
+#workspaces button {
+  background: #3a2f26;
+  color: #a0958a;
+  padding: 0 3px;
+}
+
+#workspaces button.current_output.focused {
+  background: #6b5940;
+  color: #151515;
+}
+
+#workspaces button.urgent {
+  background: #85523d;
+  color: #151515;
+}
+
+#workspaces button.empty {
+  opacity: 0;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+#clock,
+#custom-git-dotfiles,
+#custom-docker,
+#custom-disk,
+#custom-cpu,
+#custom-gpu,
+#custom-battery,
+#custom-memory,
+#custom-pulseaudio {
+  color: #9b8d7f;
+  padding: 0 2px;
+}
+
+#custom-sep {
+  color: #ffffff;
+  padding: 0 2px;
+}
+
+#custom-dnf-updates {
+  color: #ffff00;
+  padding: 0 2px;
+}
+
+#custom-public-ip {
+  color: #347433;
+  padding: 0 2px;
+}
+
+#tray {
+  background: transparent;
+  padding: 0 4px;
+}

@@ -65,10 +65,21 @@ button {
 #custom-power,
 #custom-weather,
 #custom-uptime,
-#custom-docker {
+#custom-docker,
+#custom-git-dotfiles,
+#custom-gpu,
+#custom-dnf-updates,
+#custom-public-ip {
   background-color: #101010;
   padding: 0.5rem 1rem;
   margin: 5px 0;
+}
+
+#custom-git-dotfiles,
+#custom-gpu,
+#custom-dnf-updates,
+#custom-public-ip {
+  color: #9b8d7f;
 }
 
 #clock {
