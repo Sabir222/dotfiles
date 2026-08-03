@@ -48,7 +48,6 @@
 #custom-docker,
 #custom-disk,
 #custom-cpu,
-#custom-gpu,
 #custom-battery,
 #custom-memory,
 #custom-pulseaudio {
@@ -69,6 +68,46 @@
 #custom-public-ip {
   color: #347433;
   padding: 0 2px;
+}
+
+#custom-git-dotfiles.ok {
+  color: #347433;
+}
+
+#custom-git-dotfiles.dirty {
+  color: #FF6B6B;
+}
+
+#custom-memory.ok {
+  color: #347433;
+}
+
+#custom-memory.warn {
+  color: #ffff00;
+}
+
+#custom-memory.crit {
+  color: #FF6B6B;
+}
+
+#custom-disk.warn {
+  color: #ffff00;
+}
+
+#custom-disk.crit {
+  color: #FF6B6B;
+}
+
+#custom-docker.off {
+  color: #FF0000;
+}
+
+#custom-docker.noperm {
+  color: #FFA500;
+}
+
+#custom-docker.running {
+  color: #3674B5;
 }
 
 #tray {

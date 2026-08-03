@@ -13,8 +13,6 @@
     "custom/sep",
     "custom/cpu",
     "custom/sep",
-    "custom/gpu",
-    "custom/sep",
     "custom/battery",
     "custom/sep",
     "custom/memory",
@@ -64,7 +62,7 @@
   },
 
   "custom/disk": {
-    "exec": "df -h / | awk 'NR==2 {print $4 \" free\"}'",
+    "exec": "~/.config/i3blocks/scripts/disk-usage.sh",
     "interval": 60,
     "format": "disk {}",
     "tooltip": false
@@ -77,13 +75,6 @@
     "tooltip": false
   },
 
-  "custom/gpu": {
-    "exec": "~/.config/i3blocks/scripts/gpu-usage.nvidia.sh",
-    "interval": 5,
-    "format": "gpu {}",
-    "tooltip": false
-  },
-
   "custom/battery": {
     "exec": "acpi -b | grep -o '[0-9]*%' | tr -d '%'",
     "interval": 30,
@@ -92,7 +83,7 @@
   },
 
   "custom/memory": {
-    "exec": "free -h | awk '/^Mem/ {print $3 \"/\" $2}'",
+    "exec": "~/.config/i3blocks/scripts/memory-usage.sh",
     "interval": 10,
     "format": "mem {}",
     "tooltip": false
