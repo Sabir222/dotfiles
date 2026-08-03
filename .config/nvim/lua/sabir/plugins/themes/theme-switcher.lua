@@ -14,7 +14,6 @@ return {
         'darcula-dark',
         'rusty',
         'darcubox',
-        'gruvbuddy',
         'kanagawa',
         'solarized-osaka',
         'gruvbox',
@@ -24,7 +23,6 @@ return {
         'moonfly',
         'sonokai',
         'lackluster',
-        'catppuccin',
       },
     }
   end,

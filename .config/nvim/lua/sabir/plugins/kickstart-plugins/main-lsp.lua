@@ -19,6 +19,28 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
   },
   config = function()
+    -- Recommended diagnostic config for 0.12: sort by severity and auto-open
+    -- the diagnostic float when jumping between diagnostics with [d / ]d
+    vim.diagnostic.config {
+      update_in_insert = false,
+      severity_sort = true,
+      float = { border = 'rounded', source = 'if_many' },
+      underline = { severity = { min = vim.diagnostic.severity.WARN } },
+
+      virtual_text = true, -- Text shows up at the end of the line
+      virtual_lines = false, -- Text shows up underneath the line, with virtual lines
+
+      jump = {
+        on_jump = function(_, bufnr)
+          vim.diagnostic.open_float {
+            bufnr = bufnr,
+            scope = 'cursor',
+            focus = false,
+          }
+        end,
+      },
+    }
+
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
@@ -87,11 +109,40 @@ return {
       jdtls = {},
       html = {},
       lua_ls = {
+        on_init = function(client)
+          -- Disable formatting (formatting is done by stylua)
+          client.server_capabilities.documentFormattingProvider = false
+
+          -- Respect a project-local .luarc.json if present
+          if client.workspace_folders then
+            local path = client.workspace_folders[1].name
+            if path ~= vim.fn.stdpath 'config' and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc')) then
+              return
+            end
+          end
+
+          local current_settings = client.config.settings --[[@as lspconfig.settings.lua_ls]]
+          client.config.settings.Lua = vim.tbl_deep_extend('force', current_settings.Lua, {
+            runtime = {
+              version = 'LuaJIT',
+              path = { 'lua/?.lua', 'lua/?/init.lua' },
+            },
+            workspace = {
+              checkThirdParty = false,
+              -- Extend library to all runtime files so Lua LSP understands Neovim APIs
+              library = vim.tbl_extend('force', vim.api.nvim_get_runtime_file('', true), {
+                '${3rd}/luv/library',
+                '${3rd}/busted/library',
+              }),
+            },
+          })
+        end,
         settings = {
           Lua = {
             completion = {
               callSnippet = 'Replace',
             },
+            format = { enable = false }, -- Disable formatting (formatting is done by stylua)
           },
         },
       },
@@ -113,7 +164,9 @@ return {
 
     require('mason').setup()
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-    require('mason-lspconfig').setup()
+    require('mason-lspconfig').setup {
+      automatic_enable = false, -- Don't auto-enable manually installed servers; only enable what we vim.lsp.enable() explicitly
+    }
 
     -- New API: configure and enable each server
     for name, server in pairs(servers) do

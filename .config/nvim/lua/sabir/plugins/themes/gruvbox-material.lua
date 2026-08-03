@@ -1,7 +1,6 @@
 return {
   'sainnhe/gruvbox-material',
-  lazy = false,
-  priority = 1000,
+  lazy = true,
   config = function()
     -- Configure gruvbox-material
     vim.g.gruvbox_material_background = 'hard' -- 'hard', 'medium', 'soft'

@@ -1,7 +1,9 @@
 return { -- Fuzzy Finder (files, lsp, etc)
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
-  branch = '0.1.x',
+  -- master has the nvim 0.12 fix: previewers use vim.treesitter.language.get_lang
+  -- instead of the removed ft_to_lang (0.1.x branch is incompatible with 0.12)
+  branch = 'master',
   dependencies = {
     'nvim-lua/plenary.nvim',
     { -- If encountering errors, see telescope-fzf-native README for installation instructions
