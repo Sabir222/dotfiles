@@ -1,6 +1,6 @@
 # ── Oh My Zsh ─────────────────────────────────────────────────────────────────
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="norm"
+ZSH_THEME="robbyrussell"
 
 plugins=(
     zsh-autosuggestions
@@ -83,6 +83,8 @@ alias grep='rg --color=auto'
 alias vpnon="sudo wg-quick up sabir-pc"
 alias vpnoff="sudo wg-quick down sabir-pc"
 alias vpn-dashboard='xdg-open http://10.8.0.1:51821 >/dev/null 2>&1 &'
+#superfile
+alias ff="spf"
 # system
 alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"
@@ -99,7 +101,7 @@ alias zshconf="nvim ~/.zshrc"
 alias ls='eza --long --icons=always --no-filesize --no-time --no-user --git'
 alias lt='lsd --tree --all --icon always --ignore-glob ".git|node_modules"'
 alias files='yazi'
-alias show="bat"
+alias cat="bat"
 alias dotfiles="cd ~/dotfiles/"
 
 # tmuxinator
@@ -135,7 +137,6 @@ mp3 () {
 bindkey '^p' autosuggest-accept
 bindkey -s '^f' "tmux-sessionizer\n"
 
-
 # Added by Antigravity CLI installer
 export PATH="/home/sabir/.local/bin:$PATH"
 export PATH="$HOME/.local/share/pnpm/bin:$PATH"
@@ -143,6 +144,9 @@ export PATH="$HOME/.local/share/pnpm/bin:$PATH"
 # >>> Codex installer >>>
 export PATH="/home/sabir/.local/bin:$PATH"
 # <<< Codex installer <<<
+
+
+
 
 # >>> grok installer >>>
 export PATH="$HOME/.grok/bin:$PATH"
