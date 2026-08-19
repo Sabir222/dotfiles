@@ -50,6 +50,7 @@
 #custom-cpu,
 #custom-battery,
 #custom-memory,
+#custom-swap,
 #custom-pulseaudio {
   color: #9b8d7f;
   padding: 0 2px;
@@ -88,6 +89,20 @@
 
 #custom-memory.crit {
   color: #FF6B6B;
+}
+
+#custom-swap.ok {
+  color: #ffb74d;
+}
+
+#custom-swap.warn {
+  color: #ffa726;
+  font-weight: 600;
+}
+
+#custom-swap.crit {
+  color: #FF6B6B;
+  font-weight: 700;
 }
 
 #custom-disk.warn {

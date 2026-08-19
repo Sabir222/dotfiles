@@ -269,13 +269,21 @@ return { -- Autocompletion
         per_filetype = {
           sql = { 'vim-dadbod-completion', 'buffer' },
         },
-        -- Register the `lazydev` provider, backed by lazydev.nvim's official
-        -- blink integration (lua/lazydev/integrations/blink.lua)
+        -- Register custom providers:
+        --   `lazydev` — backed by lazydev.nvim's official blink integration
+        --   (lua/lazydev/integrations/blink.lua)
+        --   `vim-dadbod-completion` — backed by the plugin's own blink
+        --   integration (lua/vim_dadbod_completion/blink.lua)
         providers = {
           lazydev = {
             name = 'lazydev',
             module = 'lazydev.integrations.blink',
             score_offset = -3,
+          },
+          ['vim-dadbod-completion'] = {
+            name = 'vim-dadbod-completion',
+            module = 'vim_dadbod_completion.blink',
+            score_offset = 5,
           },
         },
       },

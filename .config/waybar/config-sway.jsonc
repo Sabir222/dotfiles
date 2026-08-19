@@ -17,6 +17,8 @@
     "custom/sep",
     "custom/memory",
     "custom/sep",
+    "custom/swap",
+    "custom/sep",
     "custom/pulseaudio",
     "custom/sep",
     "custom/dnf-updates",
@@ -86,6 +88,13 @@
     "exec": "~/.config/i3blocks/scripts/memory-usage.sh",
     "interval": 10,
     "format": "mem {}",
+    "tooltip": false
+  },
+
+  "custom/swap": {
+    "exec": "~/.config/i3blocks/scripts/swap-usage.sh",
+    "interval": 10,
+    "format": "swp {}",
     "tooltip": false
   },
 

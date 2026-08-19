@@ -27,7 +27,7 @@ export VISUAL='nvim'
 export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 
 # Go
-export PATH="/usr/local/go/bin:$PATH"
+export PATH="/usr/local/go/bin:$HOME/go/bin:$PATH"
 
 # Node / pnpm / bun
 export PATH="/opt/nodejs/bin:$PATH"
@@ -78,6 +78,8 @@ eval "$(thefuck --alias)"
 eval "$(thefuck --alias fk)"
 
 # ── Aliases ───────────────────────────────────────────────────────────────────
+#commandcode
+alias cmd='cmd --yolo'
 #VPN
 alias grep='rg --color=auto'
 alias vpnon="sudo wg-quick up sabir-pc"
@@ -86,6 +88,7 @@ alias vpn-dashboard='xdg-open http://10.8.0.1:51821 >/dev/null 2>&1 &'
 #superfile
 alias ff="spf"
 # system
+alias update="sudo dnf update --refresh -y && flatpak update -y"
 alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"
 alias suspend="systemctl suspend"
