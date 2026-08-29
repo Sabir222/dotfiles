@@ -6,7 +6,7 @@
 # =============================================================================
 
 font-family = "CaskaydiaCove Nerd Font"
-font-size = 17
+font-size = 13
 
 # CaskaydiaCove lacks most ballot/heavy-check dingbats; Alacritty falls back to
 # DejaVu Sans (handwritten ✓/✗). Ghostty prefers mono fallbacks → plain x-like
@@ -60,7 +60,7 @@ palette = 15=#f8f8f8
 
 background-opacity = 1
 window-padding-x = 2
-window-padding-y = 1
+window-padding-y = 0
 window-padding-balance = false
 
 # Match Alacritty-on-Sway: no client-side titlebar chrome
