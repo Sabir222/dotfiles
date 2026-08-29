@@ -1,8 +1,37 @@
 onboarding = false
 
+[keys]
+# Single-pane workflow: no split/focus chords — ctrl+alt+h/l are the tab
+# switcher instead. Prefix bindings are left at their defaults.
+new_tab        = ["prefix+c", "ctrl+alt+c"]
+previous_tab   = ["prefix+p", "ctrl+alt+h"]
+next_tab       = ["prefix+n", "ctrl+alt+l"]
+zoom           = ["prefix+z", "ctrl+alt+z"]
+toggle_sidebar = ["prefix+b", "ctrl+alt+b"]
+detach         = ["prefix+q", "ctrl+alt+q"]
+
 [theme]
 name = "gruvbox"
 auto_switch = false
 
 [ui]
 sidebar_collapsed_mode = "compact"
+
+# --- tab row ---
+# No right-aligned status strip: no hostname, no clock.
+tab_bar_right = []
+prompt_new_tab_name = false
+# With one tab the whole row disappears (herdr has no key to hide only the
+# "+"). Create tabs with prefix+c; the row comes back once a workspace has 2+.
+hide_tab_bar_when_single_tab = true
+
+# --- strip the desktop chrome so only the tab row frames the screen ---
+pane_gaps = false
+pane_outer_borders = false
+pane_scrollbars = false
+show_agent_labels_on_pane_borders = false
+
+# Outer terminal title: hostname only, so the window manager tab bar does not
+# duplicate what herdr already shows. Set to "" to leave the title alone.
+window_title = "{hostname}"
+agent_panel_sort = "spaces"
