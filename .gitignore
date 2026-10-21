@@ -4,6 +4,9 @@
 # Ignore Brave Browser completely
 .config/BraveSoftware/
 
+# Serena tool state
+.serena/
+
 # General ignores
 .cache/
 *.log

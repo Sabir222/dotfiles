@@ -78,6 +78,7 @@ eval "$(thefuck --alias)"
 eval "$(thefuck --alias fk)"
 
 # ── Aliases ───────────────────────────────────────────────────────────────────
+alias oc='opencode2'
 #commandcode
 alias cmd='cmd --yolo'
 #VPN
