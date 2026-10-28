@@ -1,0 +1,120 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 18,
+  "modules-left": ["hyprland/workspaces"],
+
+  "modules-right": [
+    "custom/git-dotfiles",
+    "custom/sep",
+    "custom/docker",
+    "custom/sep",
+    "custom/disk",
+    "custom/sep",
+    "custom/cpu",
+    "custom/sep",
+    "custom/battery",
+    "custom/sep",
+    "custom/memory",
+    "custom/sep",
+    "custom/swap",
+    "custom/sep",
+    "custom/pulseaudio",
+    "custom/sep",
+    "custom/dnf-updates",
+    "custom/sep",
+    "custom/public-ip",
+    "custom/sep",
+    "clock",
+    "custom/sep",
+    "tray"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "all-outputs": true
+  },
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 2
+  },
+
+  "clock": {
+    "format": "{:%A %d-%m-%Y %H:%M:%S}",
+    "interval": 1,
+    "tooltip": false
+  },
+
+  "custom/sep": {
+    "format": "::",
+    "tooltip": false
+  },
+
+  "custom/git-dotfiles": {
+    "exec": "~/.config/i3blocks/scripts/git-dotfiles.sh",
+    "interval": 60,
+    "tooltip": false
+  },
+
+  "custom/docker": {
+    "exec": "~/.config/i3blocks/scripts/docker-info.sh",
+    "interval": 30,
+    "tooltip": false
+  },
+
+  "custom/disk": {
+    "exec": "~/.config/i3blocks/scripts/disk-usage.sh",
+    "interval": 60,
+    "format": "disk {}",
+    "tooltip": false
+  },
+
+  "custom/cpu": {
+    "exec": "top -bn1 | grep \"Cpu(s)\" | sed \"s/.*, *\\([0-9.]*\\)%* id.*/\\1/\" | awk '{print 100 - $1\"%\"}'",
+    "interval": 5,
+    "format": "cpu {}",
+    "tooltip": false
+  },
+
+  "custom/battery": {
+    "exec": "acpi -b | grep -o '[0-9]*%' | tr -d '%'",
+    "interval": 30,
+    "format": "battery {}",
+    "tooltip": false
+  },
+
+  "custom/memory": {
+    "exec": "~/.config/i3blocks/scripts/memory-usage.sh",
+    "interval": 10,
+    "format": "mem {}",
+    "tooltip": false
+  },
+
+  "custom/swap": {
+    "exec": "~/.config/i3blocks/scripts/swap-usage.sh",
+    "interval": 10,
+    "format": "swp {}",
+    "tooltip": false
+  },
+
+  "custom/pulseaudio": {
+    "exec": "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'",
+    "interval": 1,
+    "format": "vol {}",
+    "tooltip": false
+  },
+
+  "custom/dnf-updates": {
+    "exec": "~/.config/i3blocks/scripts/dnf-updates.sh",
+    "interval": 600,
+    "tooltip": false
+  },
+
+  "custom/public-ip": {
+    "exec": "wget -qO - icanhazip.com",
+    "interval": 3600,
+    "format": "ip {}",
+    "tooltip": false
+  }
+}

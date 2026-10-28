@@ -1,6 +1,8 @@
 # Window dimensions and positioning
-width=420
-height=360
+# 444x372 = 420x360 content + 24x12 insets from style.css. Done this way so
+# wofi never resizes its layer surface after the first frame (no "vibration").
+width=444
+height=372
 location=center
 orientation=vertical
 halign=fill

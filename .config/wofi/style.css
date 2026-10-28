@@ -14,7 +14,8 @@ window {
 }
 
 #input {
-    margin: 8px 12px 16px 12px;
+    /* 24px = the old #outer-box 12px + #input 12px, kept identical */
+    margin: 8px 24px 16px 24px;
     padding: 10px 12px;
     border: 1px solid transparent;
     background-color: #18181b;
@@ -40,7 +41,15 @@ window {
     background-color: transparent;
 }
 
+/* Do NOT put a margin on #outer-box: it is the window's top-level child, so
+   GTK adds it to the layer surface after the first frame and wofi visibly
+   resizes (420x360 -> 444x372 -> 420x360 -> 444x372 = the "vibration").
+   Inset #scroll instead, which does not resize the surface. */
 #outer-box {
+    margin: 0;
+}
+
+#scroll {
     margin: 0 12px 12px 12px;
 }
 

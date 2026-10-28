@@ -1,0 +1,131 @@
+* {
+  font-family: monospace;
+  font-size: 8px;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  border-radius: 0;
+}
+
+#waybar {
+  background: #151515;
+  color: #9b8d7f;
+}
+
+#workspaces {
+  background: transparent;
+}
+
+#workspaces button {
+  background: transparent;
+  color: #a0958a;
+  padding: 0 3px;
+}
+
+#workspaces button.active {
+  background: #6b5940;
+  color: #151515;
+}
+
+#workspaces button.urgent {
+  background: #85523d;
+  color: #151515;
+}
+
+#workspaces button.empty {
+  opacity: 0;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+#clock,
+#custom-git-dotfiles,
+#custom-docker,
+#custom-disk,
+#custom-cpu,
+#custom-battery,
+#custom-memory,
+#custom-swap,
+#custom-pulseaudio {
+  color: #9b8d7f;
+  padding: 0 2px;
+}
+
+#custom-sep {
+  color: #ffffff;
+  padding: 0 2px;
+}
+
+#custom-dnf-updates {
+  color: #ffff00;
+  padding: 0 2px;
+}
+
+#custom-public-ip {
+  color: #347433;
+  padding: 0 2px;
+}
+
+#custom-git-dotfiles.ok {
+  color: #347433;
+}
+
+#custom-git-dotfiles.dirty {
+  color: #FF6B6B;
+}
+
+#custom-memory.ok {
+  color: #347433;
+}
+
+#custom-memory.warn {
+  color: #ffff00;
+}
+
+#custom-memory.crit {
+  color: #FF6B6B;
+}
+
+#custom-swap.ok {
+  color: #ffb74d;
+}
+
+#custom-swap.warn {
+  color: #ffa726;
+  font-weight: 600;
+}
+
+#custom-swap.crit {
+  color: #FF6B6B;
+  font-weight: 700;
+}
+
+#custom-disk.warn {
+  color: #ffff00;
+}
+
+#custom-disk.crit {
+  color: #FF6B6B;
+}
+
+#custom-docker.off {
+  color: #FF0000;
+}
+
+#custom-docker.noperm {
+  color: #FFA500;
+}
+
+#custom-docker.running {
+  color: #3674B5;
+}
+
+#tray {
+  background: transparent;
+  padding: 0 4px;
+}
